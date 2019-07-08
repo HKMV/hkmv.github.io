@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hkmv.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hkmv-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hkmv-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="serenity,Serenity,Hexo, NexT,blog">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一般的，用方括号[ ]包围的变量都是可有可无的。 1. 数学运算函数   函数 返回值 备注     (+ 数值1 数值2 …) 累计实数或整数数值 一个或多个参数   (- 数值1 数值2 …) 第一个数值减去第二个及以后数值的差 一个或多个参数   (* 数值1 数值2 …) 所有数值乘积 一个或多个参数   (/ 数值1 数值2 …) 第一个数值除以第二个以后数值的商 一个或多个参数   (">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AutoLisp中常见的函数（转）">
+<meta property="og:url" content="http://blog.ysmv.ml/2019/05/10/yuque/nml8vh/index.html">
+<meta property="og:site_name" content="Serenity-Blog">
+<meta property="og:description" content="一般的，用方括号[ ]包围的变量都是可有可无的。 1. 数学运算函数   函数 返回值 备注     (+ 数值1 数值2 …) 累计实数或整数数值 一个或多个参数   (- 数值1 数值2 …) 第一个数值减去第二个及以后数值的差 一个或多个参数   (* 数值1 数值2 …) 所有数值乘积 一个或多个参数   (/ 数值1 数值2 …) 第一个数值除以第二个以后数值的商 一个或多个参数   (">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-08T01:02:24.866Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AutoLisp中常见的函数（转）">
+<meta name="twitter:description" content="一般的，用方括号[ ]包围的变量都是可有可无的。 1. 数学运算函数   函数 返回值 备注     (+ 数值1 数值2 …) 累计实数或整数数值 一个或多个参数   (- 数值1 数值2 …) 第一个数值减去第二个及以后数值的差 一个或多个参数   (* 数值1 数值2 …) 所有数值乘积 一个或多个参数   (/ 数值1 数值2 …) 第一个数值除以第二个以后数值的商 一个或多个参数   (">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.ysmv.ml/2019/05/10/yuque/nml8vh/">
+
+
+
+
+
+  <title>AutoLisp中常见的函数（转） | Serenity-Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Serenity-Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">古之立大事者，不惟有超世之才，亦必有坚忍不拔之志！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ysmv.ml/2019/05/10/yuque/nml8vh/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Serenity">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hkmv.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Serenity-Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AutoLisp中常见的函数（转）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-10T15:56:06+08:00">
+                2019-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一般的，用方括号<code>[ ]</code>包围的变量都是可有可无的。<br><a name="QOgJw"></a></p>
+<h2 id="1-数学运算函数"><a href="#1-数学运算函数" class="headerlink" title="1. 数学运算函数"></a>1. 数学运算函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(+ 数值1 数值2 …)</code></td>
+<td>累计实数或整数数值</td>
+<td>一个或多个参数</td>
+</tr>
+<tr>
+<td><code>(- 数值1 数值2 …)</code></td>
+<td>第一个数值减去第二个及以后数值的差</td>
+<td>一个或多个参数</td>
+</tr>
+<tr>
+<td><code>(* 数值1 数值2 …)</code></td>
+<td>所有数值乘积</td>
+<td>一个或多个参数</td>
+</tr>
+<tr>
+<td><code>(/ 数值1 数值2 …)</code></td>
+<td>第一个数值除以第二个以后数值的商</td>
+<td>一个或多个参数</td>
+</tr>
+<tr>
+<td><code>(l+ 数值)</code></td>
+<td>数值+l</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(1- 数值)</code></td>
+<td>数值-l</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(abs 数值)</code></td>
+<td>数值的绝对值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(atan 数值1 [数值2])</code></td>
+<td>反正切值</td>
+<td>可以有两个参数</td>
+</tr>
+<tr>
+<td><code>(cos 角度)</code></td>
+<td>角度的余弦值</td>
+<td>角度值为弧度</td>
+</tr>
+<tr>
+<td><code>(exp 数值)</code></td>
+<td>自然常数e为底的指数</td>
+<td>e的值约为2.71828</td>
+</tr>
+<tr>
+<td><code>(expt 底数 指数)</code></td>
+<td>底数的指数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(fix 数值)</code></td>
+<td>将数值转换为整数值</td>
+<td>直接忽略小数部分</td>
+</tr>
+<tr>
+<td><code>(float数值)</code></td>
+<td>将数值转换为实数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(gcd 数值1 数值2)</code></td>
+<td>两数值的最大公因数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(log 数值)</code></td>
+<td>数值的自然对数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(max 数值1 数值2 …)</code></td>
+<td>数值中的最大值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(min 数值1 数值2 …)</code></td>
+<td>数值中的最小值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>pi</code></td>
+<td>常数π，不是函数，使用时不用加括号</td>
+<td>其值约为<code>3.141593</code></td>
+</tr>
+<tr>
+<td><code>(rem 数值1 数值2)</code></td>
+<td>数值1除以数值2得到余数</td>
+<td>余数的正负与被除数相同</td>
+</tr>
+<tr>
+<td><code>(sin 角度)</code></td>
+<td>角度的正弦值</td>
+<td>角度值为弧度</td>
+</tr>
+<tr>
+<td><code>(sqrt 数值)</code></td>
+<td>数值的平方根</td>
+<td>平方根为非负</td>
+</tr>
+</tbody>
+</table>
+<p>AutoLisp语言支持的三角函数只有两个：正弦和余弦；支持的反三角函数只有一个：反正切。（不知道对不对，我暂时没发现别的。）</p>
+<hr>
+<p><a name="5Y5vj"></a></p>
+<h2 id="2-检验与逻辑函数"><a href="#2-检验与逻辑函数" class="headerlink" title="2. 检验与逻辑函数"></a>2. 检验与逻辑函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(= 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否全部都相同，适用数值及字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(／= 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否全部都不同</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(＜ 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否严格递增</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(＜= 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否递不减</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(＞ 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否严格递减</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(＞= 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否递不增</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(~ 数值)</code></td>
+<td>数值的位not值</td>
+<td>1的补码</td>
+</tr>
+<tr>
+<td><code>(and 表达式1 表达式2…)</code></td>
+<td>逻辑and的结果</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(boole 函数 整数 整数…)</code></td>
+<td>位式布尔运算</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(eq 表达式1 表达式2)</code></td>
+<td>比较表达式1与表达式2是否相同，适用列表比较</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(equal 表达式1 表达式2 [差量])</code></td>
+<td>比较表达式1与表达式2是否相同，差量可省略</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>对于检验函数，若表达式为真，则返回<code>T</code>；反之，则返回<code>nil</code>。</p>
+<hr>
+<p><a name="dkOMs"></a></p>
+<h2 id="3-转换运算函数"><a href="#3-转换运算函数" class="headerlink" title="3.转换运算函数"></a>3.转换运算函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(angtof 字符串 [模式])</code></td>
+<td>角度值的字符串转成实数</td>
+<td>返回弧度值</td>
+</tr>
+<tr>
+<td><code>(angtos 角度 [模式] [精度] )</code></td>
+<td>角度转成的字符串值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(atof 字符串)</code></td>
+<td>字符串转成实数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(atoi 字符串)</code></td>
+<td>字符串转成整数值</td>
+<td>忽略小数位</td>
+</tr>
+<tr>
+<td><code>(cvunit 数值原始单位 转换单位)</code></td>
+<td>数值换算单位后的值</td>
+<td>转换根据acad.unt文件</td>
+</tr>
+<tr>
+<td><code>(distof 字符串 [模式])</code></td>
+<td>根据模式将字符串转成实数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(itoa 整数)</code></td>
+<td>整数转成字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(rtos 数值模式 [精度])</code></td>
+<td>实数转成字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(trans 点 原位置 新位置 [位移])</code></td>
+<td>转换坐标系统值</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="dyLHL"></a></p>
+<h2 id="4-表处理函数"><a href="#4-表处理函数" class="headerlink" title="4.表处理函数"></a>4.表处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(append 表1 表2 ...)</code></td>
+<td>结合所有表成一个表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(assoc 关键元素 联合表)</code></td>
+<td>根据关键元素找寻联合表中关系信息</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(car 表)</code></td>
+<td>表中的第一个元素，通常用来求X坐标</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(cadr 表)</code></td>
+<td>表中的第二个元素，通常用来求y坐标</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(caddr 表)</code></td>
+<td>表中的第三个元素，通常用来求Z坐标</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(cdr 表)</code></td>
+<td>除去第一个元素后的表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(cons 新元素 表)</code></td>
+<td>将新元素添加到表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(foreach 名称 表 表达式)</code></td>
+<td>将表的每一元素对应至名称再根据表达式执行响应</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(length 表)</code></td>
+<td>表内的元素数量</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(list 元素 元素 ...)</code></td>
+<td>将所有元素合并为一表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(listp 元素)</code></td>
+<td>判断元素是否为一串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(mapcar 函数 表1 表2 …)</code></td>
+<td>将表1、表2表的元素配合函数，求得新表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(member 关键元素 表)</code></td>
+<td>关键元素(含)以后的表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nth n 表)</code></td>
+<td>表的第n个元素</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(reverse 表)</code></td>
+<td>将表元素根据顺序颠倒过来的表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(subst 新项 旧项 表)</code></td>
+<td>替换新旧表后的表</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="alWIg"></a></p>
+<h2 id="5-字符串、字符、文件处理函数"><a href="#5-字符串、字符、文件处理函数" class="headerlink" title="5.字符串、字符、文件处理函数"></a>5.字符串、字符、文件处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(ascii 字符串)</code></td>
+<td>字符串第一个字符的ASCII码</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(chr 整数)</code></td>
+<td>整数所对应的ASCII单一字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(close 文件名称)</code></td>
+<td>关闭文件</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(open 文件名 模式)</code></td>
+<td>打开文件代码，准备读取或写入信息</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(read 字符串)</code></td>
+<td>列表中的字符串的第一组元素</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(read-char [文件路径])</code></td>
+<td>通过键盘或文件中读取单一字符</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(read-line [文件路径])</code></td>
+<td>经由键盘或文件中读取一行字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(strcase 字符串 [字样])</code></td>
+<td>字符串大小写， [字样]为T，小写；忽略，大写</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(strcat 字符串1 字符串2 …)</code></td>
+<td>将各字符串合并为一个字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(strlen 字符串)</code></td>
+<td>字符串构成的字符数(即长度)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(substr 字符串 起始 长度)</code></td>
+<td>取出于字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(wcmatch 字符串 格式)</code></td>
+<td>T或nil，将字符串与通用字符进行比较</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(write-char 数值 [文件路径])</code></td>
+<td>将一ASCII字符写到文件或屏幕</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(write-line 字符串 [文件路径])</code></td>
+<td>将字符串写到文件或屏幕上</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p><a name="UOHCE"></a></p>
+<h2 id="6-等待输入函数"><a href="#6-等待输入函数" class="headerlink" title="6. 等待输入函数"></a>6. 等待输入函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(getangle [基点] [提示])</code></td>
+<td>请求输入十进制角度数值，响应一个弧度值。提示及参考点可选</td>
+</tr>
+<tr>
+<td><code>(getcorner 基点 [提示])</code></td>
+<td>请求输入另一矩形框对角点坐标</td>
+</tr>
+<tr>
+<td><code>(getdist [基点] [提示])</code></td>
+<td>请求输入一段距离</td>
+</tr>
+<tr>
+<td><code>(getint [提示])</code></td>
+<td>请求输入一个整数值</td>
+</tr>
+<tr>
+<td><code>(getkword [提示] )</code></td>
+<td>请求输入“关键词”</td>
+</tr>
+<tr>
+<td><code>(getorient [基点] [提示])</code></td>
+<td>请求输入十进制角度，响应一弧度值不受angbase、angdir影响</td>
+</tr>
+<tr>
+<td><code>(getpoint [基点] [提示])</code></td>
+<td>请求输入一个点的坐标</td>
+</tr>
+<tr>
+<td><code>(getreal [提示])</code></td>
+<td>请求输入一个实数</td>
+</tr>
+<tr>
+<td><code>(getstring [提示])</code></td>
+<td>请求输入一个字符串</td>
+</tr>
+<tr>
+<td><code>(initget [位] 字符串)</code></td>
+<td>设定下次getxxx函数的有效输入</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="QKgPt"></a></p>
+<h2 id="7-几何运算函数"><a href="#7-几何运算函数" class="headerlink" title="7. 几何运算函数"></a>7. 几何运算函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(angle 点1 点2)</code></td>
+<td>取得两点的角度弧度值</td>
+</tr>
+<tr>
+<td><code>(distance 点1 点2)</code></td>
+<td>取得两点的距离</td>
+</tr>
+<tr>
+<td><code>(inters 点1 点2 点3 点4［模式］)</code></td>
+<td>取得两条线的交点</td>
+</tr>
+<tr>
+<td><code>(osnap 点 模式字符串)</code></td>
+<td>按照捕捉模式取得另一坐标点</td>
+</tr>
+<tr>
+<td><code>(polar 基点 弧度 距离)</code></td>
+<td>按照极坐标法取得另一坐标点</td>
+</tr>
+<tr>
+<td><code>(textbox 对象列表)</code></td>
+<td>取得文字对象的两个对角点坐标</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="nFXUv"></a></p>
+<h2 id="8-对象处理函数"><a href="#8-对象处理函数" class="headerlink" title="8. 对象处理函数"></a>8. 对象处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(entdel 对象名称)</code></td>
+<td>删除或取消删除对象</td>
+</tr>
+<tr>
+<td><code>(entget 对象名称［应用程序列表］)</code></td>
+<td>取出对象名称的信息列表</td>
+</tr>
+<tr>
+<td><code>(entlast)</code></td>
+<td>取出图形信息中的最后一个对象</td>
+</tr>
+<tr>
+<td><code>(entmake 对象列表)</code></td>
+<td>建立一个新的对象列表</td>
+</tr>
+<tr>
+<td><code>(entmod 对象列表)</code></td>
+<td>根据更新的信息列表更新屏幕上元体</td>
+</tr>
+<tr>
+<td><code>(entnext [对象名称])</code></td>
+<td>找寻图面中的下一个对象</td>
+</tr>
+<tr>
+<td><code>(entsel [提示])</code></td>
+<td>请求选取一个对象，响应包含对象名称及选点坐标的列表；</td>
+</tr>
+<tr>
+<td><code>(entupd 对象名称)</code></td>
+<td>更新屏幕上复元体图形</td>
+</tr>
+<tr>
+<td><code>(handent 图码)</code></td>
+<td>返回：图码的元体名称</td>
+</tr>
+<tr>
+<td><code>(nentsel [提示])</code></td>
+<td>返回：BLOCK所含副元体对象信息列表</td>
+</tr>
+<tr>
+<td><code>(nentselp [提示] [点])</code></td>
+<td>返回：BLOCK所含副元体对象信息（以4x4矩形表示）</td>
+</tr>
+</tbody>
+</table>
+<p><a name="LrBXv"></a></p>
+<h2 id="9-选择集、符号表处理函数"><a href="#9-选择集、符号表处理函数" class="headerlink" title="9. 选择集、符号表处理函数"></a>9. 选择集、符号表处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(ssadd [对象名称] [选择集])</code></td>
+<td>将对象加入选择集或建立一新选择集</td>
+</tr>
+<tr>
+<td><code>(ssdel 对象名称 选择集)</code></td>
+<td>将对象自选择集中移出</td>
+</tr>
+<tr>
+<td><code>(ssget [模式] [点1] [点2])</code></td>
+<td>取得一个选择集</td>
+</tr>
+<tr>
+<td><code>(ssget &quot;X&quot; [过滤列表])</code></td>
+<td>取得根据过滤列表所指定范围的选择集</td>
+</tr>
+<tr>
+<td><code>(sslenth 选择集)</code></td>
+<td>计算选择集的对象个数</td>
+</tr>
+<tr>
+<td><code>(ssmemb 对象名称 选择集)</code></td>
+<td>响应对象名称是否包含于选择集内</td>
+</tr>
+<tr>
+<td><code>(ssname 选择集 索引值)</code></td>
+<td>根据索引值取出选择集中的对象名称</td>
+</tr>
+<tr>
+<td><code>(tblnext 符号表名称 [T])</code></td>
+<td>检视符号表，有效的符号表：<code>&quot;LAYER&quot;</code> <code>&quot;LTYPE&quot;</code> <code>&quot;VIEW&quot;</code> <code>&quot;STYLE&quot;</code> <code>&quot;BLOCK&quot;</code></td>
+</tr>
+<tr>
+<td><code>(tblsearch 符号表名称 符号)</code></td>
+<td>在符号表中搜寻符号</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="XwuvI"></a></p>
+<h2 id="10-AutoCAD相关查询、控制函数"><a href="#10-AutoCAD相关查询、控制函数" class="headerlink" title="10. AutoCAD相关查询、控制函数"></a>10. AutoCAD相关查询、控制函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(command &quot;AutoCAD命令&quot; …)</code></td>
+<td>超重量级函数，调用执行AutoCAD命令</td>
+</tr>
+<tr>
+<td><code>(findfile 文件名)</code></td>
+<td>返回：该文件名的路径及文件名</td>
+</tr>
+<tr>
+<td><code>(getfiled 标题 内定档名 扩展名 旗号)</code></td>
+<td>通过标准AutoCAD文件对话DCL对话框获得文件</td>
+</tr>
+<tr>
+<td><code>(getenv &quot;环境变量&quot;)</code></td>
+<td>取得该环境变量的设定值，以字符串表示</td>
+</tr>
+<tr>
+<td><code>(getvar &quot;系统变量&quot;)</code></td>
+<td>取得该系统变量的设定值，以字符串表示</td>
+</tr>
+<tr>
+<td><code>(setvar &quot;系统变量&quot; &quot;值&quot;)</code></td>
+<td>设定该系统变量的值</td>
+</tr>
+<tr>
+<td><code>(regapp 应用类项)</code></td>
+<td>将目前的AutoCAD图形登记为一个应用程序名称</td>
+</tr>
+</tbody>
+</table>
+<p><a name="LtN3E"></a></p>
+<h2 id="11-判断式、循环相关函数"><a href="#11-判断式、循环相关函数" class="headerlink" title="11. 判断式、循环相关函数"></a>11. 判断式、循环相关函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(if &lt;比较式&gt; &lt;表达式1&gt; [表达式2])</code></td>
+<td>比较式结果为真，执行<code>&lt;表达式1&gt;</code>，否则执行<code>&lt;表达式2&gt;</code></td>
+</tr>
+<tr>
+<td><code>(repeat 次数 &lt;表达式&gt; ...)</code></td>
+<td>重复执行N次<code>&lt;表达式&gt; ...</code></td>
+</tr>
+<tr>
+<td><code>(while &lt;比较式&gt; &lt;表达式&gt; ...)</code></td>
+<td>当条件成立则执行表达式内容</td>
+</tr>
+<tr>
+<td><code>(cond &lt;比较式1&gt; &lt;表达式1&gt; &lt;比较式2&gt; &lt;表达式2&gt; ...)</code></td>
+<td>多条件式的if</td>
+</tr>
+<tr>
+<td><code>(progn &lt;表达式1&gt; ...)</code></td>
+<td>连接其中的表达式为一组，常配合if、cond等函数</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="NSAmY"></a></p>
+<h2 id="12-函数处理、定义、追踪和错误处理函数"><a href="#12-函数处理、定义、追踪和错误处理函数" class="headerlink" title="12. 函数处理、定义、追踪和错误处理函数"></a>12. 函数处理、定义、追踪和错误处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(*error* 字符串)</code></td>
+<td>程序错误时的警示信息</td>
+</tr>
+<tr>
+<td><code>(alert 字符串)</code></td>
+<td>以对话框式显示出警告字符串</td>
+</tr>
+<tr>
+<td><code>(apply 功能函数 列表)</code></td>
+<td>将功能函数与列表结合后执行</td>
+</tr>
+<tr>
+<td><code>(defun 名称 自变量列表 表达式)</code></td>
+<td>自定函数或子程序</td>
+</tr>
+<tr>
+<td><code>(eval 表达式)</code></td>
+<td>表达式的执行结果</td>
+</tr>
+<tr>
+<td><code>(exit)</code></td>
+<td>强制退出目前的应用程序</td>
+</tr>
+<tr>
+<td><code>(lambda 自变量 表达式)</code></td>
+<td>定义匿名的函数</td>
+</tr>
+<tr>
+<td><code>(progn 表达式1 表达式2 …)</code></td>
+<td>连接其内的表达式为一组，常用于配合if、cond等函数</td>
+</tr>
+<tr>
+<td><code>(quit)</code></td>
+<td>强制退出目前的应用程序</td>
+</tr>
+<tr>
+<td><code>(tablet 代码 [列1 列2 列3 方向])</code></td>
+<td>取用或建立对数字化仪的校调</td>
+</tr>
+<tr>
+<td><code>(trace 函数 …)</code></td>
+<td>对函数设定追踪标记，辅助检错</td>
+</tr>
+<tr>
+<td><code>(untrace 函数 …)</code></td>
+<td>对函数设定解除追踪标记</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="f1yuJ"></a></p>
+<h2 id="13-显示、打印控制函数"><a href="#13-显示、打印控制函数" class="headerlink" title="13. 显示、打印控制函数"></a>13. 显示、打印控制函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(gfaphscr)</code></td>
+<td>作图环境切换到图形画面</td>
+</tr>
+<tr>
+<td><code>(grclear)</code></td>
+<td>暂时清除模前的屏幕画面</td>
+</tr>
+<tr>
+<td><code>(grdraw 起点 终点 颜色 [亮显])</code></td>
+<td>暂时性的画出一条线</td>
+</tr>
+<tr>
+<td><code>(grread [追踪])</code></td>
+<td>由输入设备读取追踪值</td>
+</tr>
+<tr>
+<td><code>(grtext 位置 字符串 [亮显])</code></td>
+<td>将字符串显示在状态列或屏幕菜单上</td>
+</tr>
+<tr>
+<td><code>(grvecs 向量列表 [转置矩阵])</code></td>
+<td>暂时性的画出多条线</td>
+</tr>
+<tr>
+<td><code>(menucmd 字符串)</code></td>
+<td>；提供在AlltOLISP中调用各菜单</td>
+</tr>
+<tr>
+<td><code>(prin1 [表达式 [文件代码]])</code></td>
+<td>将表达式打印于命令区或已打开的文件句柄字符则以“\”为前缀展开</td>
+</tr>
+<tr>
+<td><code>(pinc [表达式 [文件代码]])</code></td>
+<td>除句柄字符则不以”＼”为前缀展外开其余同Prinl</td>
+</tr>
+<tr>
+<td><code>(print [表达式 [文件代码]])</code></td>
+<td>除表达式会往下一新行列出，及空一格外其余同prinl</td>
+</tr>
+<tr>
+<td><code>(prompt 信息)</code></td>
+<td>将信息显示于屏幕的命令区，并随后响应一个nil信息</td>
+</tr>
+<tr>
+<td><code>(redraw [对象名称 [模式]])</code></td>
+<td>重绘整张图或根据对象名称重绘该图形</td>
+</tr>
+<tr>
+<td><code>(terpri)</code></td>
+<td>在屏幕上显示新列</td>
+</tr>
+<tr>
+<td><code>(textscr)</code></td>
+<td>作图环境切换到文字画面</td>
+</tr>
+<tr>
+<td><code>(textpage)</code></td>
+<td>清除文字画面文字类似DOS的cls命令</td>
+</tr>
+<tr>
+<td><code>(vports)</code></td>
+<td>窗口组态列表</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="8RMj5"></a></p>
+<h2 id="14-符号、元素、表达式处理函数"><a href="#14-符号、元素、表达式处理函数" class="headerlink" title="14. 符号、元素、表达式处理函数"></a>14. 符号、元素、表达式处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(atom 元素)</code></td>
+<td>如果元素不是列表，返回T，否则为nil</td>
+</tr>
+<tr>
+<td><code>(atoms-family 格式 [符号号列表])</code></td>
+<td>一组己定义函数的符号列表</td>
+</tr>
+<tr>
+<td><code>(boundp 表达式)</code></td>
+<td>T或nil，响应表达式是否有值存在</td>
+</tr>
+<tr>
+<td><code>(minusp 元素)</code></td>
+<td>判定元素是否为负值</td>
+</tr>
+<tr>
+<td><code>(not 元素)</code></td>
+<td>判定元素是否为nil</td>
+</tr>
+<tr>
+<td><code>(null 元素)</code></td>
+<td>判定元素是否被赋予nil值</td>
+</tr>
+<tr>
+<td><code>(numberp 元素)</code></td>
+<td>判定元素是否为整数或实数</td>
+</tr>
+<tr>
+<td><code>(quote 表达式)</code></td>
+<td>响应表达式未检算前状态，同<code>&#39;</code>功能</td>
+</tr>
+<tr>
+<td><code>(set 符号 表达式)</code></td>
+<td>将表达式结果设定给带单引号’符号</td>
+</tr>
+<tr>
+<td><code>(setq 符号1 表达式1 [符号2 表达式2] …)</code></td>
+<td>设定表达式结果给各符号</td>
+</tr>
+<tr>
+<td><code>(type 元素)</code></td>
+<td>元素的信息型态</td>
+</tr>
+<tr>
+<td><code>(zerop 元素)</code></td>
+<td>判定元素是否为0值</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a name="O9Nf4"></a></p>
+<h2 id="15-ADS、ARX、AutoLISP加载与卸载函数"><a href="#15-ADS、ARX、AutoLISP加载与卸载函数" class="headerlink" title="15. ADS、ARX、AutoLISP加载与卸载函数"></a>15. ADS、ARX、AutoLISP加载与卸载函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>(ads)</code></td>
+<td>目前加载ADS程序列表</td>
+</tr>
+<tr>
+<td><code>(arx)</code></td>
+<td>目前加载ARX程序列表</td>
+</tr>
+<tr>
+<td><code>(arxload 应用程序 [出错处理]))</code></td>
+<td>加载ARX程序</td>
+</tr>
+<tr>
+<td><code>(arxunload 应用程序 [出错处理]))</code></td>
+<td>卸载ARX程序</td>
+</tr>
+<tr>
+<td><code>(ver)</code></td>
+<td>目前AutoLISP版本字符串</td>
+</tr>
+<tr>
+<td><code>(load LSP文件名 [加载失败])</code></td>
+<td>加载AutoLISP文件(*．lsp)</td>
+</tr>
+<tr>
+<td><code>(xload 应用程序 [错处理])</code></td>
+<td>加载ADS应用程序</td>
+</tr>
+<tr>
+<td><code>(xunload 应用程序 [出错处理])</code></td>
+<td>卸载ADS应用程序</td>
+</tr>
+</tbody>
+</table>
+<p>作者：吴吉光<br>链接：<a href="https://www.jianshu.com/p/067ea05a425c" target="_blank" rel="noopener">https://www.jianshu.com/p/067ea05a425c</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+<p>作者：吴吉光<br>链接：<a href="https://www.jianshu.com/p/57578dc48f11" target="_blank" rel="noopener">https://www.jianshu.com/p/57578dc48f11</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+<p>作者：吴吉光<br>链接：<a href="https://www.jianshu.com/p/41fd1a86939a" target="_blank" rel="noopener">https://www.jianshu.com/p/41fd1a86939a</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+
+      
+    </div>
+
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+              -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+        </div>
+    
+</div>
+      
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <!--
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Serenity
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.ysmv.ml/2019/05/10/yuque/nml8vh/" title="AutoLisp中常见的函数（转）">http://blog.ysmv.ml/2019/05/10/yuque/nml8vh/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+如果使用
+
+包括进去
+需要:
+增加文章md文件的头部信息中添加copyright: true时，添加版权声明
+增加文章标题、发布时间、更新时间等信息
+-->
+
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文标题:</strong>
+    <a href="/2019/05/10/yuque/nml8vh/">AutoLisp中常见的函数（转）</a>
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Serenity
+  </li>
+  <li class="post-copyright-author">
+    <strong>发布时间:</strong>
+    2019年05月10日 - 15:05
+  </li>
+  <li class="post-copyright-author">
+    <strong>最后更新:</strong>
+    2019年07月08日 - 09:07
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.ysmv.ml/2019/05/10/yuque/nml8vh/" title="AutoLisp中常见的函数（转）">http://blog.ysmv.ml/2019/05/10/yuque/nml8vh/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/18/yuque/ft6znq/" rel="next" title="时间复杂度的计算----摘自百度百科">
+                <i class="fa fa-chevron-left"></i> 时间复杂度的计算----摘自百度百科
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/hkmv.png" alt="Serenity">
+            
+              <p class="site-author-name" itemprop="name">Serenity</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HKMV" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:serenity@m.odmail.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/113871707664723782439" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数学运算函数"><span class="nav-number">1.</span> <span class="nav-text">1. 数学运算函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-检验与逻辑函数"><span class="nav-number">2.</span> <span class="nav-text">2. 检验与逻辑函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-转换运算函数"><span class="nav-number">3.</span> <span class="nav-text">3.转换运算函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-表处理函数"><span class="nav-number">4.</span> <span class="nav-text">4.表处理函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-字符串、字符、文件处理函数"><span class="nav-number">5.</span> <span class="nav-text">5.字符串、字符、文件处理函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-等待输入函数"><span class="nav-number">6.</span> <span class="nav-text">6. 等待输入函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-几何运算函数"><span class="nav-number">7.</span> <span class="nav-text">7. 几何运算函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-对象处理函数"><span class="nav-number">8.</span> <span class="nav-text">8. 对象处理函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-选择集、符号表处理函数"><span class="nav-number">9.</span> <span class="nav-text">9. 选择集、符号表处理函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-AutoCAD相关查询、控制函数"><span class="nav-number">10.</span> <span class="nav-text">10. AutoCAD相关查询、控制函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-判断式、循环相关函数"><span class="nav-number">11.</span> <span class="nav-text">11. 判断式、循环相关函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-函数处理、定义、追踪和错误处理函数"><span class="nav-number">12.</span> <span class="nav-text">12. 函数处理、定义、追踪和错误处理函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-显示、打印控制函数"><span class="nav-number">13.</span> <span class="nav-text">13. 显示、打印控制函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-符号、元素、表达式处理函数"><span class="nav-number">14.</span> <span class="nav-text">14. 符号、元素、表达式处理函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-ADS、ARX、AutoLISP加载与卸载函数"><span class="nav-number">15.</span> <span class="nav-text">15. ADS、ARX、AutoLISP加载与卸载函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019-2-14 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Serenity</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">6.4k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

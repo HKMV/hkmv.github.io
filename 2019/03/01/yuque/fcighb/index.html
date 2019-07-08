@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/264343/1551695674839-20385a2b-2cfd-4cf0-8f91-60ff8bcde53d.png#align=left&display=inline&height=519&name=image.png&originHeight=519&originWidth=993&size=47047&status=done&width=993">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/264343/1551695093880-8a85c214-2d66-438d-be94-f4188179a7d9.png#align=left&display=inline&height=301&name=image.png&originHeight=301&originWidth=825&size=24238&status=done&width=825">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/264343/1551695140822-e3893049-1572-49de-907e-14d130895ff5.png#align=left&display=inline&height=521&name=image.png&originHeight=521&originWidth=693&size=37442&status=done&width=693">
-<meta property="og:updated_time" content="2019-03-04T11:52:50.133Z">
+<meta property="og:updated_time" content="2019-07-08T01:02:24.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WSL配置 tomcat8 Manager">
 <meta name="twitter:description" content="1.设置管理员密码$ sudo vi /etc/tomcat8/tomcat-users.xml //我这里是wsl_ubuntu18.04_直接通过apt的方式安装的tomcat8，和大家的目录可能不同，记的修改。 再在最后标签前添加用户配置： 12345678&amp;lt;role rolename=&amp;quot;manager&amp;quot;/&amp;gt;&amp;lt;role rolename=&amp;quot;m">
@@ -385,7 +385,8 @@
 <p>再在最后标签前添加用户配置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;role rolename=&quot;manager&quot;/&gt;</span><br><span class="line">&lt;role rolename=&quot;manager-gui&quot;/&gt;</span><br><span class="line">&lt;role rolename=&quot;admin&quot;/&gt;</span><br><span class="line">&lt;role rolename=&quot;admin-gui&quot;/&gt;</span><br><span class="line">&lt;role rolename=&quot;manager-script&quot;/&gt;</span><br><span class="line">&lt;role rolename=&quot;manager-jmx&quot;/&gt;</span><br><span class="line">&lt;role rolename=&quot;manager-status&quot;/&gt;</span><br><span class="line">&lt;user username=&quot;admin&quot; password=&quot;admin&quot; roles=&quot;admin-gui,admin,manager-gui,manager,manager-script,manager-jmx,manager-status&quot;/&gt;</span><br></pre></td></tr></table></figure>
 <p>如图：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1551695674839-20385a2b-2cfd-4cf0-8f91-60ff8bcde53d.png#align=left&amp;display=inline&amp;height=519&amp;name=image.png&amp;originHeight=519&amp;originWidth=993&amp;size=47047&amp;status=done&amp;width=993" alt="image.png"><br><br><a name="512606cf"></a></p>
-<h2 id="2-解除上传war包大小限制"><a href="#2-解除上传war包大小限制" class="headerlink" title="2.解除上传war包大小限制"></a>2.解除上传war包大小限制</h2><h1 id="vim-你Tomcat目录-webapps-manager-WEB-INF-web-xml-本文-为wsl有所不太：-sudo-vi-usr-share-tomcat8-admin-manager-WEB-INF-web-xml"><a href="#vim-你Tomcat目录-webapps-manager-WEB-INF-web-xml-本文-为wsl有所不太：-sudo-vi-usr-share-tomcat8-admin-manager-WEB-INF-web-xml" class="headerlink" title="vim 你Tomcat目录/webapps/manager/WEB-INF/web.xml  本文 为wsl有所不太：$  sudo vi /usr/share/tomcat8-admin/manager/WEB-INF/web.xml"></a>vim 你Tomcat目录/webapps/manager/WEB-INF/web.xml  <br>本文 为wsl有所不太：<br>$  sudo vi /usr/share/tomcat8-admin/manager/WEB-INF/web.xml<br></h1><p><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1551695093880-8a85c214-2d66-438d-be94-f4188179a7d9.png#align=left&amp;display=inline&amp;height=301&amp;name=image.png&amp;originHeight=301&amp;originWidth=825&amp;size=24238&amp;status=done&amp;width=825" alt="image.png"><br>如图，找到大概在56行处修改，<br>比如要限制上传最大为500M，数字计算方法：500<em>1024</em>1024<br>如图:<br><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1551695140822-e3893049-1572-49de-907e-14d130895ff5.png#align=left&amp;display=inline&amp;height=521&amp;name=image.png&amp;originHeight=521&amp;originWidth=693&amp;size=37442&amp;status=done&amp;width=693" alt="image.png"><br><br>保存后，重启Tomcat，先停止在启动 tomcat没有重启<br># service tomcat stop<br># service tomcat start<br>上传测试，打开即可进入Tomcat Web Application Manager 主页面<br>网页 <a href="https://blog.51cto.com/manager/html/" target="_blank" rel="noopener">http://你的IP或网址:8080/manager/html/</a> 输入配置的用户名和密码<br></p>
+<h2 id="2-解除上传war包大小限制"><a href="#2-解除上传war包大小限制" class="headerlink" title="2.解除上传war包大小限制"></a>2.解除上传war包大小限制</h2><h1 id="vim-你Tomcat目录-webapps-manager-WEB-INF-web-xml-本文-为wsl有所不太：-sudo-vi-usr-share-tomcat8-admin-manager-WEB-INF-web-xml"><a href="#vim-你Tomcat目录-webapps-manager-WEB-INF-web-xml-本文-为wsl有所不太：-sudo-vi-usr-share-tomcat8-admin-manager-WEB-INF-web-xml" class="headerlink" title="vim 你Tomcat目录/webapps/manager/WEB-INF/web.xml  本文 为wsl有所不太：$  sudo vi /usr/share/tomcat8-admin/manager/WEB-INF/web.xml"></a>vim 你Tomcat目录/webapps/manager/WEB-INF/web.xml  <br>本文 为wsl有所不太：<br>$  sudo vi /usr/share/tomcat8-admin/manager/WEB-INF/web.xml<br></h1><p><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1551695093880-8a85c214-2d66-438d-be94-f4188179a7d9.png#align=left&amp;display=inline&amp;height=301&amp;name=image.png&amp;originHeight=301&amp;originWidth=825&amp;size=24238&amp;status=done&amp;width=825" alt="image.png"><br>如图，找到大概在56行处修改，<br>比如要限制上传最大为500M，数字计算方法：500<em>1024</em>1024<br>如图:<br><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1551695140822-e3893049-1572-49de-907e-14d130895ff5.png#align=left&amp;display=inline&amp;height=521&amp;name=image.png&amp;originHeight=521&amp;originWidth=693&amp;size=37442&amp;status=done&amp;width=693" alt="image.png"></p>
+<p>保存后，重启Tomcat，先停止在启动 tomcat没有重启<br># service tomcat stop<br># service tomcat start<br>上传测试，打开即可进入Tomcat Web Application Manager 主页面<br>网页 <a href="https://blog.51cto.com/manager/html/" target="_blank" rel="noopener">http://你的IP或网址:8080/manager/html/</a> 输入配置的用户名和密码<br></p>
 
       
     </div>
@@ -454,7 +455,7 @@
   </li>
   <li class="post-copyright-author">
     <strong>最后更新:</strong>
-    2019年03月04日 - 19:03
+    2019年07月08日 - 09:07
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
@@ -488,6 +489,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/04/yuque/kqtcrn/" rel="prev" title="解决docker启动失败">
+                解决docker启动失败 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -566,7 +571,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -659,7 +664,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.6k</span>
+    <span title="Site words total count">6.4k</span>
   
 </div>
 
