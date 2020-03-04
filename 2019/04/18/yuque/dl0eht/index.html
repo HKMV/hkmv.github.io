@@ -86,13 +86,13 @@
 <meta property="og:site_name" content="Serenity-Blog">
 <meta property="og:description" content="1.修改c/c++函数,使其能够被外部调用方法:1.修改函数声明修改前: 1int  main(int argc, char *argv[]) 修改后: 1extern &quot;C&quot; _declspec(dllexport) int __stdcall main(int argc, char *argv[]) 2.修改解决方案下要生成类库项目的类型右键项目—&amp;gt;选择属性  会出现如下图的属性页重新">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/264343/1555549992989-f32cca49-773c-4c85-ad44-f5b5ddd6debd.png#align=left&display=inline&height=561&name=image.png&originHeight=561&originWidth=876&size=93538&status=done&width=876">
-<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/264343/1555550985865-9557d691-eeb1-408c-857d-61e9fca664a0.png#align=left&display=inline&height=208&name=image.png&originHeight=208&originWidth=535&size=20815&status=done&width=535">
-<meta property="og:updated_time" content="2019-08-16T07:35:13.476Z">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/264343/1555549992989-f32cca49-773c-4c85-ad44-f5b5ddd6debd.png#align=left&display=inline&height=561&name=image.png&originHeight=561&originWidth=876&size=93538&status=done&style=none&width=876">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2019/png/264343/1555550985865-9557d691-eeb1-408c-857d-61e9fca664a0.png#align=left&display=inline&height=208&name=image.png&originHeight=208&originWidth=535&size=20815&status=done&style=none&width=535">
+<meta property="og:updated_time" content="2020-03-04T06:42:20.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用C#调用自己写的c&#x2F;c++类库">
 <meta name="twitter:description" content="1.修改c/c++函数,使其能够被外部调用方法:1.修改函数声明修改前: 1int  main(int argc, char *argv[]) 修改后: 1extern &quot;C&quot; _declspec(dllexport) int __stdcall main(int argc, char *argv[]) 2.修改解决方案下要生成类库项目的类型右键项目—&amp;gt;选择属性  会出现如下图的属性页重新">
-<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2019/png/264343/1555549992989-f32cca49-773c-4c85-ad44-f5b5ddd6debd.png#align=left&display=inline&height=561&name=image.png&originHeight=561&originWidth=876&size=93538&status=done&width=876">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2019/png/264343/1555549992989-f32cca49-773c-4c85-ad44-f5b5ddd6debd.png#align=left&display=inline&height=561&name=image.png&originHeight=561&originWidth=876&size=93538&status=done&style=none&width=876">
 
 
 
@@ -383,8 +383,8 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>  <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br></pre></td></tr></table></figure>
 <p><br>修改后:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> _declspec(dllexport) <span class="keyword">int</span> __<span class="function">stdcall <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br></pre></td></tr></table></figure>
-<p>2.修改解决方案下要生成类库项目的类型<br>右键项目—&gt;选择属性  会出现如下图的属性页<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555549992989-f32cca49-773c-4c85-ad44-f5b5ddd6debd.png#align=left&amp;display=inline&amp;height=561&amp;name=image.png&amp;originHeight=561&amp;originWidth=876&amp;size=93538&amp;status=done&amp;width=876" alt="image.png"><br>重新编译一下,就会发现在在输出目录出现一个  项目名.dll 的文件 .<br><strong>如果不设置  公共语言运行时支持  为公共语言运行时支持(/clr)的话,  在c#中是无法引用的.</strong><br><a name="80c39a17"></a></p>
-<h1 id="2-在C-中调用C-C-编写的dll"><a href="#2-在C-中调用C-C-编写的dll" class="headerlink" title="2.在C#中调用C/C++编写的dll"></a>2.在C#中调用C/C++编写的dll</h1><p>1.首先编写外部静态方法,然后通过注解DllImport指定对应的dll中的方法名.<br><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555550985865-9557d691-eeb1-408c-857d-61e9fca664a0.png#align=left&amp;display=inline&amp;height=208&amp;name=image.png&amp;originHeight=208&amp;originWidth=535&amp;size=20815&amp;status=done&amp;width=535" alt="image.png"><br>2.就可以通过 CUitl.Main(“string”) 的方式进行调用了.<br></p>
+<p>2.修改解决方案下要生成类库项目的类型<br>右键项目—&gt;选择属性  会出现如下图的属性页<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555549992989-f32cca49-773c-4c85-ad44-f5b5ddd6debd.png#align=left&amp;display=inline&amp;height=561&amp;name=image.png&amp;originHeight=561&amp;originWidth=876&amp;size=93538&amp;status=done&amp;style=none&amp;width=876" alt="image.png"><br>重新编译一下,就会发现在在输出目录出现一个  项目名.dll 的文件 .<br><strong>如果不设置  公共语言运行时支持  为公共语言运行时支持(/clr)的话,  在c#中是无法引用的.</strong><br><a name="80c39a17"></a></p>
+<h1 id="2-在C-中调用C-C-编写的dll"><a href="#2-在C-中调用C-C-编写的dll" class="headerlink" title="2.在C#中调用C/C++编写的dll"></a>2.在C#中调用C/C++编写的dll</h1><p>1.首先编写外部静态方法,然后通过注解DllImport指定对应的dll中的方法名.<br><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555550985865-9557d691-eeb1-408c-857d-61e9fca664a0.png#align=left&amp;display=inline&amp;height=208&amp;name=image.png&amp;originHeight=208&amp;originWidth=535&amp;size=20815&amp;status=done&amp;style=none&amp;width=535" alt="image.png"><br>2.就可以通过 CUitl.Main(“string”) 的方式进行调用了.<br></p>
 
       
     </div>
@@ -453,7 +453,7 @@
   </li>
   <li class="post-copyright-author">
     <strong>最后更新:</strong>
-    2019年08月16日 - 15:08
+    2020年03月04日 - 14:03
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
@@ -569,7 +569,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -648,7 +648,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2019-2-14 &mdash; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019-2-14 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -662,7 +662,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.5k</span>
+    <span title="Site words total count">15.9k</span>
   
 </div>
 
@@ -856,5 +856,5 @@
 
   
 
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

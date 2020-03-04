@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/hkmv.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hkmv-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hkmv-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="serenity,Serenity,Hexo, NexT,blog">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言现在安装网线基本上都会送给一个电视机顶盒，但是这个机顶盒不是一般的难用；做了很多限制，不能向自己买的电视机顶盒那样安装任意的软件。 经过一顿的谷歌百度后发现是可以的破解的。 就有了如下尝试： 1.探究默认设置默认这款机顶盒的wifi功能是关闭的只能通过网线连接使用，需要在设置中开启，进入设置提示输入密码（10010或者6321）我这里是6321.进入设置后我们会发现无线连接为灰色的进不去没法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="破解 联通 贝尔s-010w-a机顶盒">
+<meta property="og:url" content="http://blog.ysmv.ml/2020/02/02/yuque/cpkq1r/index.html">
+<meta property="og:site_name" content="Serenity-Blog">
+<meta property="og:description" content="前言现在安装网线基本上都会送给一个电视机顶盒，但是这个机顶盒不是一般的难用；做了很多限制，不能向自己买的电视机顶盒那样安装任意的软件。 经过一顿的谷歌百度后发现是可以的破解的。 就有了如下尝试： 1.探究默认设置默认这款机顶盒的wifi功能是关闭的只能通过网线连接使用，需要在设置中开启，进入设置提示输入密码（10010或者6321）我这里是6321.进入设置后我们会发现无线连接为灰色的进不去没法">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624160964-5dd89b5b-8afd-4c8b-ade8-9f7ccfa0777a.jpeg#align=left&display=inline&height=205&name=IMG_20200202_140531.jpg&originHeight=2250&originWidth=4000&size=2170954&status=done&style=none&width=365">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624162443-88dadf0e-3d9c-4ec5-b5fb-7287b9b39ed3.jpeg#align=left&display=inline&height=206&name=IMG_20200202_140552.jpg&originHeight=2250&originWidth=4000&size=2355019&status=done&style=none&width=366">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624164039-9d8fa76b-2d3d-488c-bd99-bfb3703ed7f7.jpeg#align=left&display=inline&height=411&name=IMG_20200202_140615.jpg&originHeight=2250&originWidth=4000&size=2158257&status=done&style=none&width=730">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624148407-6330ccc0-cfd9-4ded-a754-145d2f0b857d.jpeg#align=left&display=inline&height=203&name=IMG_20200202_135727.jpg&originHeight=2250&originWidth=4000&size=2476573&status=done&style=none&width=360">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624151678-8ee67bee-c80c-4512-8958-cc2a4fb9ffa6.jpeg#align=left&display=inline&height=195&name=IMG_20200202_135806.jpg&originHeight=2250&originWidth=4000&size=3189490&status=done&style=none&width=346">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624150332-b39f69b3-6ae9-4aec-b363-057ddf2a8470.jpeg#align=left&display=inline&height=195&name=IMG_20200202_135745.jpg&originHeight=2250&originWidth=4000&size=2417696&status=done&style=none&width=346">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624153383-21c421d8-5e3b-4397-a256-4e4eea23c0f9.jpeg#align=left&display=inline&height=194&name=IMG_20200202_135819.jpg&originHeight=2250&originWidth=4000&size=2501959&status=done&style=none&width=345">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624155642-93fa87e1-1094-45a3-b4be-e324f286e27f.jpeg#align=left&display=inline&height=196&name=IMG_20200202_135833.jpg&originHeight=2250&originWidth=4000&size=2903390&status=done&style=none&width=348">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/264343/1580624741321-6a151b27-89e9-4b38-b56c-4d5de89edee7.png#align=left&display=inline&height=245&name=image.png&originHeight=600&originWidth=900&size=70401&status=done&style=none&width=368">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/264343/1580624771890-6167c0bf-08dd-4bf9-8153-38faee7b4a63.png#align=left&display=inline&height=245&name=image.png&originHeight=600&originWidth=900&size=71368&status=done&style=none&width=368">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/264343/1580625585991-c40ae72a-396d-48d0-af66-c25220347ffc.png#align=left&display=inline&height=199&name=image.png&originHeight=600&originWidth=900&size=93123&status=done&style=none&width=298">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624156862-9c206d6c-686a-45ee-8f7f-d3c3a632334c.jpeg#align=left&display=inline&height=197&name=IMG_20200202_140504.jpg&originHeight=2250&originWidth=4000&size=2732650&status=done&style=none&width=350">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624144885-d8150b2e-a812-46ef-9573-1c9baa228bff.jpeg#align=left&display=inline&height=2250&name=IMG_20200202_091648.jpg&originHeight=2250&originWidth=4000&size=3017869&status=done&style=none&width=4000">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624155642-93fa87e1-1094-45a3-b4be-e324f286e27f.jpeg#align=left&display=inline&height=227&name=IMG_20200202_135833.jpg&originHeight=2250&originWidth=4000&size=2903390&status=done&style=none&width=403">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/264343/1580625716519-8c0354b8-9a7d-409d-ae76-3c98d7648772.png#align=left&display=inline&height=205&name=image.png&originHeight=252&originWidth=340&size=16200&status=done&style=none&width=276">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/264343/1580625689696-d39cc675-a66d-4e2a-ab16-ed1b1caedd6c.png#align=left&display=inline&height=200&name=image.png&originHeight=197&originWidth=361&size=15372&status=done&style=none&width=366">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/264343/1580626293761-f1699e0b-5769-462f-8957-d60fde50eae4.png#align=left&display=inline&height=225&name=image.png&originHeight=315&originWidth=544&size=269957&status=done&style=none&width=388">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/264343/1580626402455-3ab3faa6-b502-4d34-b2b8-f2cef3ad9358.png#align=left&display=inline&height=224&name=image.png&originHeight=373&originWidth=535&size=315059&status=done&style=none&width=322">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624156862-9c206d6c-686a-45ee-8f7f-d3c3a632334c.jpeg#align=left&display=inline&height=201&name=IMG_20200202_140504.jpg&originHeight=2250&originWidth=4000&size=2732650&status=done&style=none&width=358">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624159242-3547e88f-9684-46d7-8265-5b4c88172de3.jpeg#align=left&display=inline&height=200&name=IMG_20200202_140515.jpg&originHeight=2250&originWidth=4000&size=3665815&status=done&style=none&width=355">
+<meta property="og:updated_time" content="2020-03-04T06:42:20.636Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="破解 联通 贝尔s-010w-a机顶盒">
+<meta name="twitter:description" content="前言现在安装网线基本上都会送给一个电视机顶盒，但是这个机顶盒不是一般的难用；做了很多限制，不能向自己买的电视机顶盒那样安装任意的软件。 经过一顿的谷歌百度后发现是可以的破解的。 就有了如下尝试： 1.探究默认设置默认这款机顶盒的wifi功能是关闭的只能通过网线连接使用，需要在设置中开启，进入设置提示输入密码（10010或者6321）我这里是6321.进入设置后我们会发现无线连接为灰色的进不去没法">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624160964-5dd89b5b-8afd-4c8b-ade8-9f7ccfa0777a.jpeg#align=left&display=inline&height=205&name=IMG_20200202_140531.jpg&originHeight=2250&originWidth=4000&size=2170954&status=done&style=none&width=365">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.ysmv.ml/2020/02/02/yuque/cpkq1r/">
+
+
+
+
+
+  <title>破解 联通 贝尔s-010w-a机顶盒 | Serenity-Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Serenity-Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">古之立大事者，不惟有超世之才，亦必有坚忍不拔之志！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.ysmv.ml/2020/02/02/yuque/cpkq1r/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Serenity">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hkmv.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Serenity-Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">破解 联通 贝尔s-010w-a机顶盒</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-02T10:21:08+08:00">
+                2020-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="ZvRT8"></a></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>现在安装网线基本上都会送给一个电视机顶盒，但是这个机顶盒不是一般的难用；做了很多限制，不能向自己买的电视机顶盒那样安装任意的软件。</p>
+<p>经过一顿的谷歌百度后发现是可以的破解的。</p>
+<p>就有了如下尝试：<br><a name="xBTaN"></a></p>
+<h2 id="1-探究默认设置"><a href="#1-探究默认设置" class="headerlink" title="1.探究默认设置"></a>1.探究默认设置</h2><p>默认这款机顶盒的wifi功能是关闭的只能通过网线连接使用，需要在设置中开启，进入设置提示输入密码（10010或者6321）我这里是6321.进入设置后我们会发现无线连接为灰色的进不去没法设置。<br><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624160964-5dd89b5b-8afd-4c8b-ade8-9f7ccfa0777a.jpeg#align=left&amp;display=inline&amp;height=205&amp;name=IMG_20200202_140531.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2170954&amp;status=done&amp;style=none&amp;width=365" alt="IMG_20200202_140531.jpg"><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624162443-88dadf0e-3d9c-4ec5-b5fb-7287b9b39ed3.jpeg#align=left&amp;display=inline&amp;height=206&amp;name=IMG_20200202_140552.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2355019&amp;status=done&amp;style=none&amp;width=366" alt="IMG_20200202_140552.jpg"><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624164039-9d8fa76b-2d3d-488c-bd99-bfb3703ed7f7.jpeg#align=left&amp;display=inline&amp;height=411&amp;name=IMG_20200202_140615.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2158257&amp;status=done&amp;style=none&amp;width=730" alt="IMG_20200202_140615.jpg"></p>
+<p><a name="S5xYN"></a></p>
+<h2 id="2-进入隐藏的神奇设置"><a href="#2-进入隐藏的神奇设置" class="headerlink" title="2.进入隐藏的神奇设置"></a>2.进入隐藏的神奇设置</h2><p>网上说使用usb键盘连接机顶盒，按F2键可进入所有应用界面有一个圆形的设置app，在里面可以进行一些神奇的操作。问题是我没有usb键盘啊！呜呜呜。。。。<br>不过巧在，家里还有一个电信的机顶盒（中兴B860AV1.1-T2），我刚开始使用的电信的机顶盒的遥控器操作的，在我按下电信机顶盒的首页按钮后神奇的一幕出现了，这不就是按键盘上的F2键出现的所有应用的界面嘛，此处省略无比激动的心情。。。（原本想把频段识别出来分析给大家呢，没找到合适的工具。）<br><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624148407-6330ccc0-cfd9-4ded-a754-145d2f0b857d.jpeg#align=left&amp;display=inline&amp;height=203&amp;name=IMG_20200202_135727.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2476573&amp;status=done&amp;style=none&amp;width=360" alt="IMG_20200202_135727.jpg"></p>
+<p><a name="QyV4J"></a></p>
+<h2 id="3-开启wifi"><a href="#3-开启wifi" class="headerlink" title="3.开启wifi"></a>3.开启wifi</h2><p>接下来就是一顿操作，首先进入网络设置开启wifi连接家里我Iwifi网络，然后看到下面竟然还有无限热点功能，但是由于是单网卡，开启热点后wifi功能就关闭了（应该是为网线用户设计的）；接着发现竟然还有蓝牙功能，经过多次尝试都没能打开就没再尝试（也没什么用）；<br><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624151678-8ee67bee-c80c-4512-8958-cc2a4fb9ffa6.jpeg#align=left&amp;display=inline&amp;height=195&amp;name=IMG_20200202_135806.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=3189490&amp;status=done&amp;style=none&amp;width=346" alt="IMG_20200202_135806.jpg"><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624150332-b39f69b3-6ae9-4aec-b363-057ddf2a8470.jpeg#align=left&amp;display=inline&amp;height=195&amp;name=IMG_20200202_135745.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2417696&amp;status=done&amp;style=none&amp;width=346" alt="IMG_20200202_135745.jpg"></p>
+<p><a name="fmmeM"></a></p>
+<h2 id="4-重点来了，开启调试"><a href="#4-重点来了，开启调试" class="headerlink" title="4.重点来了，开启调试"></a>4.重点来了，开启调试</h2><p>向右翻到第二页看到有一个开发者选项功能（此刻想到了手机的usb调试功能，嘿嘿嘿），赶紧进入一看还真有，接着就是设置“允许未知来源程序”设置为是、“允许USB调试”设置为已打开。网上说的使用360手机助手进行连接，发现360手机助手的网页死活打不开就没下载。<br><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624153383-21c421d8-5e3b-4397-a256-4e4eea23c0f9.jpeg#align=left&amp;display=inline&amp;height=194&amp;name=IMG_20200202_135819.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2501959&amp;status=done&amp;style=none&amp;width=345" alt="IMG_20200202_135819.jpg"><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624155642-93fa87e1-1094-45a3-b4be-e324f286e27f.jpeg#align=left&amp;display=inline&amp;height=196&amp;name=IMG_20200202_135833.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2903390&amp;status=done&amp;style=none&amp;width=348" alt="IMG_20200202_135833.jpg"></p>
+<p><a name="LCX6F"></a></p>
+<h2 id="5-通过-TV盒子助手-进行无线连接操作"><a href="#5-通过-TV盒子助手-进行无线连接操作" class="headerlink" title="5.通过 TV盒子助手 进行无线连接操作"></a>5.通过 TV盒子助手 进行无线连接操作</h2><p>经过使用“TV盒子助手”（测试发现新版本获取不到应用列表信息，无法进行安装app，这里使用的是3.0.42.1版本）进行连接测试(说明一下要打开“允许Usb调试”才能搜到并成功连接设备)；接着当然就是安装著名的当贝桌面和当贝市场了，按遥控板上的首页按钮设置默认桌面为当贝桌面（忘记拍照），然后试了试精简系统功能，成功的删除了盒子中内置的无用垃圾app。<br><img src="https://cdn.nlark.com/yuque/0/2020/png/264343/1580624741321-6a151b27-89e9-4b38-b56c-4d5de89edee7.png#align=left&amp;display=inline&amp;height=245&amp;name=image.png&amp;originHeight=600&amp;originWidth=900&amp;size=70401&amp;status=done&amp;style=none&amp;width=368" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2020/png/264343/1580624771890-6167c0bf-08dd-4bf9-8153-38faee7b4a63.png#align=left&amp;display=inline&amp;height=245&amp;name=image.png&amp;originHeight=600&amp;originWidth=900&amp;size=71368&amp;status=done&amp;style=none&amp;width=368" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2020/png/264343/1580625585991-c40ae72a-396d-48d0-af66-c25220347ffc.png#align=left&amp;display=inline&amp;height=199&amp;name=image.png&amp;originHeight=600&amp;originWidth=900&amp;size=93123&amp;status=done&amp;style=none&amp;width=298" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624156862-9c206d6c-686a-45ee-8f7f-d3c3a632334c.jpeg#align=left&amp;display=inline&amp;height=197&amp;name=IMG_20200202_140504.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2732650&amp;status=done&amp;style=none&amp;width=350" alt="IMG_20200202_140504.jpg"></p>
+<p><a name="NcJHu"></a></p>
+<h2 id="6-这样就完了吗-答案当然是没有！"><a href="#6-这样就完了吗-答案当然是没有！" class="headerlink" title="6.这样就完了吗?答案当然是没有！"></a>6.这样就完了吗?答案当然是没有！</h2><p>在进入当贝市场就提示安装更新，那就更新呗，结果安装时提示“本终端不允许安装第三方应用”（忘记拍照），经过多次尝试依旧是如此（开关 允许未知来源程序）。由于之前搞过安卓开发，了解安装程序是通过“程序安装器”来实现安装的，就想到了运营商一定是对“程序安装器”动了手脚，当时只想着怎么破解他这个“程序安装器”再进行替换了，在网上发现一个替换4.4.4官方“程序安装器”的方法给我灵机一动；</p>
+<p><a name="cbegG"></a></p>
+<h2 id="7-破解安装三方软件替换官方“程序安装器”"><a href="#7-破解安装三方软件替换官方“程序安装器”" class="headerlink" title="7.破解安装三方软件替换官方“程序安装器”"></a>7.破解安装三方软件替换官方“程序安装器”</h2><p>现在机顶盒没有root，也没找到合适的获取root的方法；直接使用了usb线连接电脑的方法进行处理，机顶盒离电源近的一个usb接口是可是进行adb操作的；<br>剪了两根之前手机上的数据线，接成一根双usb公头的线，（我这里的黑线坏了，又找了一根）<br><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624144885-d8150b2e-a812-46ef-9573-1c9baa228bff.jpeg#align=left&amp;display=inline&amp;height=2250&amp;name=IMG_20200202_091648.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=3017869&amp;status=done&amp;style=none&amp;width=4000" alt="IMG_20200202_091648.jpg"><br>连接机顶盒和电脑，在机顶盒的开发者选项中开启“Usb连接状态”，电脑就能识别到一个移动终端的设备了(类似于一部手机)；</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624155642-93fa87e1-1094-45a3-b4be-e324f286e27f.jpeg#align=left&amp;display=inline&amp;height=227&amp;name=IMG_20200202_135833.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2903390&amp;status=done&amp;style=none&amp;width=403" alt="IMG_20200202_135833.jpg">renity-Mipro器<br><img src="https://cdn.nlark.com/yuque/0/2020/png/264343/1580625716519-8c0354b8-9a7d-409d-ae76-3c98d7648772.png#align=left&amp;display=inline&amp;height=205&amp;name=image.png&amp;originHeight=252&amp;originWidth=340&amp;size=16200&amp;status=done&amp;style=none&amp;width=276" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2020/png/264343/1580625689696-d39cc675-a66d-4e2a-ab16-ed1b1caedd6c.png#align=left&amp;display=inline&amp;height=200&amp;name=image.png&amp;originHeight=197&amp;originWidth=361&amp;size=15372&amp;status=done&amp;style=none&amp;width=366" alt="image.png"></p>
+<p>接着就是找出adb工具了，我这里使用的是AS中sdk中的工具集，当然你可以直接百度进行下载。使用下面的命令进行替换为官方的“程序安装器”  ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">adb devices <span class="comment">#连接并显示设备列表，设备正常连接后会显示在下面前面为一串数字，后面是device才正常，否则不正常，重新进行连接（adb kill-server &amp;&amp; adb start-server）</span></span><br><span class="line"></span><br><span class="line">adb remount <span class="comment">#挂载设备</span></span><br><span class="line"></span><br><span class="line">adb shell   <span class="comment">#进入shell</span></span><br><span class="line"></span><br><span class="line">mv /system/app/PackageInstaller.apk /system/app/PackageInstaller.apk.bak <span class="comment">#备份原来的 程序安装器</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> <span class="comment">#退出shell</span></span><br><span class="line"></span><br><span class="line">adb push PackageInstaller.apk /system/app/ <span class="comment"># 将你下载的应用安装器拷贝到系统目录</span></span><br><span class="line"></span><br><span class="line">reboot <span class="comment">#重启设备自动更新应用。一定要重启，不然安装无法进行下一步就结束了。</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/264343/1580626293761-f1699e0b-5769-462f-8957-d60fde50eae4.png#align=left&amp;display=inline&amp;height=225&amp;name=image.png&amp;originHeight=315&amp;originWidth=544&amp;size=269957&amp;status=done&amp;style=none&amp;width=388" alt="image.png"><img src="https://cdn.nlark.com/yuque/0/2020/png/264343/1580626402455-3ab3faa6-b502-4d34-b2b8-f2cef3ad9358.png#align=left&amp;display=inline&amp;height=224&amp;name=image.png&amp;originHeight=373&amp;originWidth=535&amp;size=315059&amp;status=done&amp;style=none&amp;width=322" alt="image.png"><br>破解过程中忘记截图，上图是之后截得<br>装个优酷、腾讯视频、电视家（看电视台直播的软件），想装什么软件直接在“当贝市场”装就行了和手机安装软件一模一样，到此就完美的破解了这款机顶盒。<br><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624156862-9c206d6c-686a-45ee-8f7f-d3c3a632334c.jpeg#align=left&amp;display=inline&amp;height=201&amp;name=IMG_20200202_140504.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=2732650&amp;status=done&amp;style=none&amp;width=358" alt="IMG_20200202_140504.jpg"><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/264343/1580624159242-3547e88f-9684-46d7-8265-5b4c88172de3.jpeg#align=left&amp;display=inline&amp;height=200&amp;name=IMG_20200202_140515.jpg&amp;originHeight=2250&amp;originWidth=4000&amp;size=3665815&amp;status=done&amp;style=none&amp;width=355" alt="IMG_20200202_140515.jpg"> <br>最后是用到的工具资料下载地址：<a href="https://www.lanzous.com/b0fd6fe0j" target="_blank" rel="noopener">https://www.lanzous.com/b0fd6fe0j</a> 密码:6ugz</p>
+
+      
+    </div>
+
+    <div>
+      
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+              -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+        </div>
+    
+</div>
+      
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <!--
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Serenity
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.ysmv.ml/2020/02/02/yuque/cpkq1r/" title="破解 联通 贝尔s-010w-a机顶盒">http://blog.ysmv.ml/2020/02/02/yuque/cpkq1r/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+如果使用
+
+包括进去
+需要:
+增加文章md文件的头部信息中添加copyright: true时，添加版权声明
+增加文章标题、发布时间、更新时间等信息
+-->
+
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文标题:</strong>
+    <a href="/2020/02/02/yuque/cpkq1r/">破解 联通 贝尔s-010w-a机顶盒</a>
+  </li>
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Serenity
+  </li>
+  <li class="post-copyright-author">
+    <strong>发布时间:</strong>
+    2020年02月02日 - 10:02
+  </li>
+  <li class="post-copyright-author">
+    <strong>最后更新:</strong>
+    2020年03月04日 - 14:03
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://blog.ysmv.ml/2020/02/02/yuque/cpkq1r/" title="破解 联通 贝尔s-010w-a机顶盒">http://blog.ysmv.ml/2020/02/02/yuque/cpkq1r/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/03/yuque/idh6x3/" rel="next" title="Windows常用环境变量值">
+                <i class="fa fa-chevron-left"></i> Windows常用环境变量值
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/02/yuque/ouowrh/" rel="prev" title="记一次服务器网络故障-安装v2ray控制管理面板v2-ui遇到的">
+                记一次服务器网络故障-安装v2ray控制管理面板v2-ui遇到的 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/hkmv.png" alt="Serenity">
+            
+              <p class="site-author-name" itemprop="name">Serenity</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/HKMV" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:serenity@m.odmail.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/113871707664723782439" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-探究默认设置"><span class="nav-number">2.</span> <span class="nav-text">1.探究默认设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-进入隐藏的神奇设置"><span class="nav-number">3.</span> <span class="nav-text">2.进入隐藏的神奇设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-开启wifi"><span class="nav-number">4.</span> <span class="nav-text">3.开启wifi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-重点来了，开启调试"><span class="nav-number">5.</span> <span class="nav-text">4.重点来了，开启调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-通过-TV盒子助手-进行无线连接操作"><span class="nav-number">6.</span> <span class="nav-text">5.通过 TV盒子助手 进行无线连接操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-这样就完了吗-答案当然是没有！"><span class="nav-number">7.</span> <span class="nav-text">6.这样就完了吗?答案当然是没有！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-破解安装三方软件替换官方“程序安装器”"><span class="nav-number">8.</span> <span class="nav-text">7.破解安装三方软件替换官方“程序安装器”</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019-2-14 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Serenity</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">15.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
