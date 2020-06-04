@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="时间复杂度的计算----摘自百度百科, Serenity-Blog">
+    <meta name="keywords" content="更新Idea2020.1打开提示Cannot load a JDK class：com.sun.jdi.Field, Serenity-Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>时间复杂度的计算----摘自百度百科 | Serenity-Blog</title>
+    <title>更新Idea2020.1打开提示Cannot load a JDK class：com.sun.jdi.Field | Serenity-Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,12 +306,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">时间复杂度的计算----摘自百度百科</h1>
+                    <h1 class="description center-align post-title">更新Idea2020.1打开提示Cannot load a JDK class：com.sun.jdi.Field</h1>
                 </div>
             </div>
         </div>
@@ -440,7 +440,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2019-04-18
+                    2020-04-18
                 </div>
                 
 
@@ -456,15 +456,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n)，使得T(n)/f(n)的极限值（当n趋近于无穷大时）为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作T(n)=O(f(n))，称O(f(n)) 为算法的渐进时间复杂度，简称时间复杂度。<br><strong>分析：</strong>随着模块n的增大，算法执行的时间的增长率和 f(n) 的增长率成正比，所以 f(n) 越小，算法的时间复杂度越低，算法的效率越高。</p>
-<hr>
-<ol start="2">
-<li>在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出 T(n) 的同<a href="https://baike.baidu.com/item/%E6%95%B0%E9%87%8F%E7%BA%A7" target="_blank" rel="noopener">数量级</a><br>（它的同数量级有以下：1，logn，n，n logn ，n的平方，n的三次方，2的n次方，n!），<br>找出后，f(n) = 该数量级，若 T(n)/f(n) 求极限可得到一常数c，则时间复杂度T(n) = O(f(n))<br>例：算法：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=n; ++j)</span><br><span class="line">    &#123;</span><br><span class="line">        c[i][j] = <span class="number">0</span>;<span class="comment">//该步骤属于基本操作执行次数：n的平方次</span></span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>; k&lt;=n; ++k)</span><br><span class="line">            c[i][j] += a[i][k] * b[k][j];<span class="comment">//该步骤属于基本操作执行次数：n的三次方次</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则有 <img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555562636748-f99ce658-2110-4359-bb49-b931f0f510aa.png#align=left&amp;display=inline&amp;height=20&amp;originHeight=20&amp;originWidth=101&amp;size=0&amp;status=done&amp;width=101" alt="">，根据上面括号里的同数量级，我们可以确定 n的三次方 为T（n）的同数量级<br>则有 <img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555562636756-2f4daf5f-01a6-46e9-ab70-8d09a39fd4ee.png#align=left&amp;display=inline&amp;height=20&amp;originHeight=20&amp;originWidth=67&amp;size=0&amp;status=done&amp;width=67" alt=""> ，然后根据 T(n)/f(n) 求极限可得到常数c<br>则该算法的时间<a href="https://baike.baidu.com/item/%E5%A4%8D%E6%9D%82" target="_blank" rel="noopener">复杂</a>度：T(n) = O(n^3) 注：n^3即是n的3次方。<br></p>
-<hr>
-<p>3.在pascal中比较容易理解，容易计算的方法是：<br>看看有几重for循环，<br>只有一重则时间复杂度为O(n)，<br>二重则为O(n^2)，<br>依此类推，<br>如果有二分则为O(logn)，<br>二分例如<a href="https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E5%B9%82" target="_blank" rel="noopener">快速幂</a>、二分查找，<br>如果一个for循环套一个二分，那么时间复杂度则为O(nlogn)。</p>
+                <p>一启动就会提示下图，点击确定程序就会退出：<br><img src="https://cdn.nlark.com/yuque/0/2020/png/264343/1587175348624-a83ae832-3519-4fef-a22a-db05b87cf4dd.png#align=left&amp;display=inline&amp;height=276&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=276&amp;originWidth=593&amp;size=161601&amp;status=done&amp;style=none&amp;width=593" alt="image.png"><br>在网上查到的方法基本上都是让修改环境变量，配置到Idea目录下的jbr，但是这种方法对我却不起作用，<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这个问题一直困扰了我好久，后来查询stackoverflow找到解决办法，是</span><br><span class="line">c:\Users\&lt;user&gt;\AppData\Roaming\JetBrains\IntelliJIdea2020.1\idea64.exe.jdk</span><br><span class="line">这个文件中配置的jdk的目录不正确导致的，我这里可能是之前无意间修改成了本机安装的jdk8.</span><br><span class="line">把这个文件删除之后就可以打开了。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">参考地址：</span><br><span class="line">（没解决）https://blog.csdn.net/whzhaochao/article/details/105539961 </span><br><span class="line">（解决）https://stackoverflow.com/questions/61145290/intellij-idea-doesnt-start-cannot-load-a-jdk-class-com-sun-jdi-field </span><br><span class="line">https://www.jetbrains.com/help/idea/2020.1/tuning-the-ide.html</span><br></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -490,7 +484,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.codeslife.top/2019/04/18/yuque/ft6znq/">http://www.codeslife.top/2019/04/18/yuque/ft6znq/</a>
+                    <a href="http://www.codeslife.top/2020/04/18/yuque/gc9f2w/">http://www.codeslife.top/2020/04/18/yuque/gc9f2w/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -697,42 +691,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2019/05/10/yuque/nml8vh/">
+                <a href="/2020/04/18/yuque/ah0sig/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="AutoLisp中常见的函数（转）">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="记一次同事直接删除gogs数据库中用户导致的问题">
                         
-                        <span class="card-title">AutoLisp中常见的函数（转）</span>
+                        <span class="card-title">记一次同事直接删除gogs数据库中用户导致的问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一般的，用方括号[ ]包围的变量都是可有可无的。
-1. 数学运算函数
-
-
-函数
-返回值
-备注
-
-
-
-
-(+ 数值1 数值2 …)
-累计实数或整数数值
-一个或多个参数
-
-
-(- 数值1 数值2 …)
-第一个数值减去第二个及以后数值的差
-一个或
+                            有一次同事的gogs账号无法登陆了，他想着看下数据库中的密码，解密没成功，他也无法以他的名字新建账号，就直接在数据库的用户表中删除了自己的用户，接着导致的gogs的一些功能无法使用（500）的问题，比如管理项目的协作者（分析为找不到指定用户
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-18
                         </span>
                         <span class="publish-author">
                             
@@ -752,28 +728,24 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/18/yuque/dl0eht/">
+                <a href="/2020/04/11/yuque/uo85sn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="使用C#调用自己写的c/c++类库">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="记一次项目部署后缺少一个文件（替换文件）的解决思路">
                         
-                        <span class="card-title">使用C#调用自己写的c/c++类库</span>
+                        <span class="card-title">记一次项目部署后缺少一个文件（替换文件）的解决思路</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-1.修改c/c++函数,使其能够被外部调用方法:1.修改函数声明修改前:
-1int  main(int argc, char *argv[])
-修改后:
-1extern "C" _declspec(dllexport) int __std
+                            1.原本想的是进入容器后，找到springboot项目的war包执行是释放到的临时目录，把缺少的文件添加进去，结果在网上查了一下只有关于运行时操作产生的临时文件的目录，并没找到解包的目录。2.然后就想到了像解压压缩包一样解压war包再重新打
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-11
                             </span>
                         <span class="publish-author">
                             

@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="referrer" content="no-referrer">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -728,24 +729,25 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/04/11/yuque/uo85sn/">
+                <a href="/2020/04/18/yuque/gc9f2w/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="记一次项目部署后缺少一个文件（替换文件）的解决思路">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="更新Idea2020.1打开提示Cannot load a JDK class：com.sun.jdi.Field">
                         
-                        <span class="card-title">记一次项目部署后缺少一个文件（替换文件）的解决思路</span>
+                        <span class="card-title">更新Idea2020.1打开提示Cannot load a JDK class：com.sun.jdi.Field</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.原本想的是进入容器后，找到springboot项目的war包执行是释放到的临时目录，把缺少的文件添加进去，结果在网上查了一下只有关于运行时操作产生的临时文件的目录，并没找到解包的目录。2.然后就想到了像解压压缩包一样解压war包再重新打
+                            一启动就会提示下图，点击确定程序就会退出：在网上查到的方法基本上都是让修改环境变量，配置到Idea目录下的jbr，但是这种方法对我却不起作用，
+1234这个问题一直困扰了我好久，后来查询stackoverflow找到解决办法，是c:\Use
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-18
                             </span>
                         <span class="publish-author">
                             
