@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
-    <meta name="keywords" content="时间复杂度的计算----摘自百度百科, Serenity-Blog">
+    <meta name="keywords" content="时间复杂度的计算----摘自百度百科, 慕书">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>时间复杂度的计算----摘自百度百科 | Serenity-Blog</title>
+    <title>时间复杂度的计算----摘自百度百科 | 慕书</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -30,7 +30,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-</head>
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -42,7 +44,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Serenity-Blog</span>
+                    <span class="logo-span">慕书</span>
                 </a>
             </div>
             
@@ -56,7 +58,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -67,7 +69,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -78,7 +80,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -89,7 +91,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -100,7 +102,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -111,7 +113,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -122,14 +124,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -141,7 +143,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Serenity-Blog</div>
+        <div class="logo-name">慕书</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -159,7 +161,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -170,7 +172,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -181,7 +183,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -192,7 +194,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -203,7 +205,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -214,7 +216,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -225,18 +227,11 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
         
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/HKMV/" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
         
     </ul>
 </div>
@@ -244,59 +239,6 @@
 
         </div>
 
-        
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
-
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/HKMV/" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
-    </svg>
-</a>
         
     </nav>
 
@@ -427,7 +369,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -439,35 +381,64 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2019-04-18
                 </div>
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-01-29
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    530
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    2 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n)，使得T(n)/f(n)的极限值（当n趋近于无穷大时）为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作T(n)=O(f(n))，称O(f(n)) 为算法的渐进时间复杂度，简称时间复杂度。<br><strong>分析：</strong>随着模块n的增大，算法执行的时间的增长率和 f(n) 的增长率成正比，所以 f(n) 越小，算法的时间复杂度越低，算法的效率越高。</p>
+                <p>1.一般情况下，算法中基本操作重复执行的次数是问题规模 n 的某个函数，用 T(n)表示，若有某个辅助函数 f(n)，使得 T(n)/f(n)的极限值（当 n 趋近于无穷大时）为不等于零的常数，则称 f(n)是 T(n)的同数量级函数。记作 T(n)=O(f(n))，称 O(f(n)) 为算法的渐进时间复杂度，简称时间复杂度。<br><strong>分析：</strong>随着模块 n 的增大，算法执行的时间的增长率和 f(n) 的增长率成正比，所以 f(n) 越小，算法的时间复杂度越低，算法的效率越高。</p>
 <hr>
 <ol start="2">
-<li>在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出 T(n) 的同<a href="https://baike.baidu.com/item/%E6%95%B0%E9%87%8F%E7%BA%A7" target="_blank" rel="noopener">数量级</a><br>（它的同数量级有以下：1，logn，n，n logn ，n的平方，n的三次方，2的n次方，n!），<br>找出后，f(n) = 该数量级，若 T(n)/f(n) 求极限可得到一常数c，则时间复杂度T(n) = O(f(n))<br>例：算法：</li>
+<li>在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出 T(n) 的同<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E9%87%8F%E7%BA%A7">数量级</a><br>（它的同数量级有以下：1，logn，n，n logn ，n 的平方，n 的三次方，2 的 n 次方，n!），<br>找出后，f(n) = 该数量级，若 T(n)/f(n) 求极限可得到一常数 c，则时间复杂度 T(n) = O(f(n))<br>例：算法：</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=n; ++j)</span><br><span class="line">    &#123;</span><br><span class="line">        c[i][j] = <span class="number">0</span>;<span class="comment">//该步骤属于基本操作执行次数：n的平方次</span></span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>; k&lt;=n; ++k)</span><br><span class="line">            c[i][j] += a[i][k] * b[k][j];<span class="comment">//该步骤属于基本操作执行次数：n的三次方次</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>则有 <img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555562636748-f99ce658-2110-4359-bb49-b931f0f510aa.png#align=left&amp;display=inline&amp;height=20&amp;originHeight=20&amp;originWidth=101&amp;size=0&amp;status=done&amp;width=101" alt="">，根据上面括号里的同数量级，我们可以确定 n的三次方 为T（n）的同数量级<br>则有 <img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555562636756-2f4daf5f-01a6-46e9-ab70-8d09a39fd4ee.png#align=left&amp;display=inline&amp;height=20&amp;originHeight=20&amp;originWidth=67&amp;size=0&amp;status=done&amp;width=67" alt=""> ，然后根据 T(n)/f(n) 求极限可得到常数c<br>则该算法的时间<a href="https://baike.baidu.com/item/%E5%A4%8D%E6%9D%82" target="_blank" rel="noopener">复杂</a>度：T(n) = O(n^3) 注：n^3即是n的3次方。<br></p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//该步骤属于基本操作执行次数：n的平方次</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>k<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> k<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> <span class="token operator">++</span>k<span class="token punctuation">)</span>
+            c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">*</span> b<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//该步骤属于基本操作执行次数：n的三次方次</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>则有 &nbsp;<img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555562636748-f99ce658-2110-4359-bb49-b931f0f510aa.png#align=left&amp;display=inline&amp;height=20&amp;originHeight=20&amp;originWidth=101&amp;size=0&amp;status=done&amp;width=101">，根据上面括号里的同数量级，我们可以确定 n 的三次方 为 T（n）的同数量级<br>则有 &nbsp;<img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555562636756-2f4daf5f-01a6-46e9-ab70-8d09a39fd4ee.png#align=left&amp;display=inline&amp;height=20&amp;originHeight=20&amp;originWidth=67&amp;size=0&amp;status=done&amp;width=67">&nbsp;，然后根据 T(n)/f(n) 求极限可得到常数 c<br>则该算法的时间<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%8D%E6%9D%82">复杂</a>度：T(n) = O(n^3) 注：n^3 即是 n 的 3 次方。</p>
 <hr>
-<p>3.在pascal中比较容易理解，容易计算的方法是：<br>看看有几重for循环，<br>只有一重则时间复杂度为O(n)，<br>二重则为O(n^2)，<br>依此类推，<br>如果有二分则为O(logn)，<br>二分例如<a href="https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E5%B9%82" target="_blank" rel="noopener">快速幂</a>、二分查找，<br>如果一个for循环套一个二分，那么时间复杂度则为O(nlogn)。</p>
+<p>3.在 pascal 中比较容易理解，容易计算的方法是：<br>看看有几重 for 循环，<br>只有一重则时间复杂度为 O(n)，<br>二重则为 O(n^2)，<br>依此类推，<br>如果有二分则为 O(logn)，<br>二分例如<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BF%AB%E9%80%9F%E5%B9%82">快速幂</a>、二分查找，<br>如果一个 for 循环套一个二分，那么时间复杂度则为 O(nlogn)。</p>
 
             </div>
-            <hr>
+            <hr/>
 
             
 
@@ -476,17 +447,17 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Serenity</a>
+                    <a href="/about" rel="external nofollow noreferrer">慕书</a>
                 </span>
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -496,14 +467,14 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint polocy. If reproduced, please indicate source
-                    <a href="/about" target="_blank">Serenity</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">慕书</a>
                     !
                 </span>
             </div>
@@ -512,7 +483,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -527,7 +498,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -695,7 +666,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2019/05/10/yuque/nml8vh/">
                     <div class="card-image">
@@ -719,7 +690,6 @@
 
 
 
-
 (+ 数值1 数值2 …)
 累计实数或整数数值
 一个或多个参数
@@ -727,7 +697,7 @@
 
 (- 数值1 数值2 …)
 第一个数值减去第二个及以后数值的差
-一个或
+一个或多
                         
                     </div>
                     <div class="publish-info">
@@ -737,7 +707,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Serenity
+                            慕书
                             
                         </span>
                     </div>
@@ -749,7 +719,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/04/18/yuque/dl0eht/">
@@ -764,11 +734,11 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-1.修改c/c++函数,使其能够被外部调用方法:1.修改函数声明修改前:
-1int  main(int argc, char *argv[])
+                            1.修改 c/c++函数,使其能够被外部调用方法: 1.修改函数声明修改前:
+int  main(int argc, char *argv[])
+
 修改后:
-1extern "C" _declspec(dllexport) int __std
+extern "C" _declspec(dllexport) int __std
                         
                     </div>
                     <div class="publish-info">
@@ -778,7 +748,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Serenity
+                            慕书
                             
                         </span>
                     </div>
@@ -822,7 +792,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -955,7 +925,19 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div class="">
     
     <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="503838841" fixed="true" autoplay="false" theme="#42b983" loop="all" order="random" preload="auto" volume="0.7" list-folded="true">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
         </meting-js>
     </div>
 </div>
@@ -968,10 +950,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="/about" target="_blank">Serenity</a>
+            <a href="/about" target="_blank">慕书</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">24.1k</span>&nbsp;字
             
             
             
@@ -979,12 +964,14 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
             
             <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
             </span>
             
             
             <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
             </span>
             
             <br>
@@ -1019,10 +1006,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
 </div>
     </div>
 </footer>
@@ -1034,8 +1017,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>

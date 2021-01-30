@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head>
     <meta charset="utf-8">
-    <meta name="keywords" content="AutoLisp中常见的函数（转）, Serenity-Blog">
+    <meta name="keywords" content="AutoLisp中常见的函数（转）, 慕书">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>AutoLisp中常见的函数（转） | Serenity-Blog</title>
+    <title>AutoLisp中常见的函数（转） | 慕书</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -30,7 +30,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-</head>
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -42,7 +44,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Serenity-Blog</span>
+                    <span class="logo-span">慕书</span>
                 </a>
             </div>
             
@@ -56,7 +58,7 @@
       
       <i class="fas fa-home" style="zoom: 0.6;"></i>
       
-      <span>Index</span>
+      <span>首页</span>
     </a>
     
   </li>
@@ -67,7 +69,7 @@
       
       <i class="fas fa-tags" style="zoom: 0.6;"></i>
       
-      <span>Tags</span>
+      <span>标签</span>
     </a>
     
   </li>
@@ -78,7 +80,7 @@
       
       <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
       
-      <span>Categories</span>
+      <span>分类</span>
     </a>
     
   </li>
@@ -89,7 +91,7 @@
       
       <i class="fas fa-archive" style="zoom: 0.6;"></i>
       
-      <span>Archives</span>
+      <span>归档</span>
     </a>
     
   </li>
@@ -100,7 +102,7 @@
       
       <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
       
-      <span>About</span>
+      <span>关于</span>
     </a>
     
   </li>
@@ -111,7 +113,7 @@
       
       <i class="fas fa-comments" style="zoom: 0.6;"></i>
       
-      <span>Contact</span>
+      <span>留言板</span>
     </a>
     
   </li>
@@ -122,14 +124,14 @@
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
       
-      <span>Friends</span>
+      <span>友情链接</span>
     </a>
     
   </li>
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -141,7 +143,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Serenity-Blog</div>
+        <div class="logo-name">慕书</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -159,7 +161,7 @@
 			
 			    <i class="fa-fw fas fa-home"></i>
 			
-			Index
+			首页
 		</a>
           
         </li>
@@ -170,7 +172,7 @@
 			
 			    <i class="fa-fw fas fa-tags"></i>
 			
-			Tags
+			标签
 		</a>
           
         </li>
@@ -181,7 +183,7 @@
 			
 			    <i class="fa-fw fas fa-bookmark"></i>
 			
-			Categories
+			分类
 		</a>
           
         </li>
@@ -192,7 +194,7 @@
 			
 			    <i class="fa-fw fas fa-archive"></i>
 			
-			Archives
+			归档
 		</a>
           
         </li>
@@ -203,7 +205,7 @@
 			
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
-			About
+			关于
 		</a>
           
         </li>
@@ -214,7 +216,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -225,18 +227,11 @@
 			
 			    <i class="fa-fw fas fa-address-book"></i>
 			
-			Friends
+			友情链接
 		</a>
           
         </li>
         
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/HKMV/" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
         
     </ul>
 </div>
@@ -244,59 +239,6 @@
 
         </div>
 
-        
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
-
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/HKMV/" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
-    </svg>
-</a>
         
     </nav>
 
@@ -427,7 +369,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                           </div>
                     
                 </div>
@@ -439,24 +381,44 @@
             <div class="post-info">
                 
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
                     2019-05-10
                 </div>
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-01-29
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    12 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>一般的，用方括号<code>[ ]</code>包围的变量都是可有可无的。<br><a name="QOgJw"></a></p>
+                <p>一般的，用方括号<code>[ ]</code>包围的变量都是可有可无的。</p>
 <h2 id="1-数学运算函数"><a href="#1-数学运算函数" class="headerlink" title="1. 数学运算函数"></a>1. 数学运算函数</h2><table>
 <thead>
 <tr>
@@ -465,8 +427,7 @@
 <th>备注</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(+ 数值1 数值2 …)</code></td>
 <td>累计实数或整数数值</td>
 <td>一个或多个参数</td>
@@ -513,8 +474,8 @@
 </tr>
 <tr>
 <td><code>(exp 数值)</code></td>
-<td>自然常数e为底的指数</td>
-<td>e的值约为2.71828</td>
+<td>自然常数 e 为底的指数</td>
+<td>e 的值约为 2.71828</td>
 </tr>
 <tr>
 <td><code>(expt 底数 指数)</code></td>
@@ -553,12 +514,12 @@
 </tr>
 <tr>
 <td><code>pi</code></td>
-<td>常数π，不是函数，使用时不用加括号</td>
+<td>常数 π，不是函数，使用时不用加括号</td>
 <td>其值约为<code>3.141593</code></td>
 </tr>
 <tr>
 <td><code>(rem 数值1 数值2)</code></td>
-<td>数值1除以数值2得到余数</td>
+<td>数值 1 除以数值 2 得到余数</td>
 <td>余数的正负与被除数相同</td>
 </tr>
 <tr>
@@ -571,11 +532,9 @@
 <td>数值的平方根</td>
 <td>平方根为非负</td>
 </tr>
-</tbody>
-</table>
-<p>AutoLisp语言支持的三角函数只有两个：正弦和余弦；支持的反三角函数只有一个：反正切。（不知道对不对，我暂时没发现别的。）</p>
+</tbody></table>
+<p>AutoLisp 语言支持的三角函数只有两个：正弦和余弦；支持的反三角函数只有一个：反正切。（不知道对不对，我暂时没发现别的。）</p>
 <hr>
-<p><a name="5Y5vj"></a></p>
 <h2 id="2-检验与逻辑函数"><a href="#2-检验与逻辑函数" class="headerlink" title="2. 检验与逻辑函数"></a>2. 检验与逻辑函数</h2><table>
 <thead>
 <tr>
@@ -584,8 +543,7 @@
 <th>备注</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(= 表达式1 表达式2 ...)</code></td>
 <td>比较表达式是否全部都相同，适用数值及字符串</td>
 <td>-</td>
@@ -617,12 +575,12 @@
 </tr>
 <tr>
 <td><code>(~ 数值)</code></td>
-<td>数值的位not值</td>
-<td>1的补码</td>
+<td>数值的位 not 值</td>
+<td>1 的补码</td>
 </tr>
 <tr>
 <td><code>(and 表达式1 表达式2…)</code></td>
-<td>逻辑and的结果</td>
+<td>逻辑 and 的结果</td>
 <td>-</td>
 </tr>
 <tr>
@@ -632,19 +590,17 @@
 </tr>
 <tr>
 <td><code>(eq 表达式1 表达式2)</code></td>
-<td>比较表达式1与表达式2是否相同，适用列表比较</td>
+<td>比较表达式 1 与表达式 2 是否相同，适用列表比较</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>(equal 表达式1 表达式2 [差量])</code></td>
-<td>比较表达式1与表达式2是否相同，差量可省略</td>
+<td>比较表达式 1 与表达式 2 是否相同，差量可省略</td>
 <td>-</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>对于检验函数，若表达式为真，则返回<code>T</code>；反之，则返回<code>nil</code>。</p>
 <hr>
-<p><a name="dkOMs"></a></p>
 <h2 id="3-转换运算函数"><a href="#3-转换运算函数" class="headerlink" title="3.转换运算函数"></a>3.转换运算函数</h2><table>
 <thead>
 <tr>
@@ -653,8 +609,7 @@
 <th>备注</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(angtof 字符串 [模式])</code></td>
 <td>角度值的字符串转成实数</td>
 <td>返回弧度值</td>
@@ -677,7 +632,7 @@
 <tr>
 <td><code>(cvunit 数值原始单位 转换单位)</code></td>
 <td>数值换算单位后的值</td>
-<td>转换根据acad.unt文件</td>
+<td>转换根据 acad.unt 文件</td>
 </tr>
 <tr>
 <td><code>(distof 字符串 [模式])</code></td>
@@ -699,10 +654,8 @@
 <td>转换坐标系统值</td>
 <td>-</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><a name="dyLHL"></a></p>
 <h2 id="4-表处理函数"><a href="#4-表处理函数" class="headerlink" title="4.表处理函数"></a>4.表处理函数</h2><table>
 <thead>
 <tr>
@@ -711,8 +664,7 @@
 <th>备注</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(append 表1 表2 ...)</code></td>
 <td>结合所有表成一个表</td>
 <td>-</td>
@@ -724,17 +676,17 @@
 </tr>
 <tr>
 <td><code>(car 表)</code></td>
-<td>表中的第一个元素，通常用来求X坐标</td>
+<td>表中的第一个元素，通常用来求 X 坐标</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>(cadr 表)</code></td>
-<td>表中的第二个元素，通常用来求y坐标</td>
+<td>表中的第二个元素，通常用来求 y 坐标</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>(caddr 表)</code></td>
-<td>表中的第三个元素，通常用来求Z坐标</td>
+<td>表中的第三个元素，通常用来求 Z 坐标</td>
 <td>-</td>
 </tr>
 <tr>
@@ -769,7 +721,7 @@
 </tr>
 <tr>
 <td><code>(mapcar 函数 表1 表2 …)</code></td>
-<td>将表1、表2表的元素配合函数，求得新表</td>
+<td>将表 1、表 2 表的元素配合函数，求得新表</td>
 <td>-</td>
 </tr>
 <tr>
@@ -779,7 +731,7 @@
 </tr>
 <tr>
 <td><code>(nth n 表)</code></td>
-<td>表的第n个元素</td>
+<td>表的第 n 个元素</td>
 <td>-</td>
 </tr>
 <tr>
@@ -792,10 +744,8 @@
 <td>替换新旧表后的表</td>
 <td>-</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><a name="alWIg"></a></p>
 <h2 id="5-字符串、字符、文件处理函数"><a href="#5-字符串、字符、文件处理函数" class="headerlink" title="5.字符串、字符、文件处理函数"></a>5.字符串、字符、文件处理函数</h2><table>
 <thead>
 <tr>
@@ -804,15 +754,14 @@
 <th>备注</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(ascii 字符串)</code></td>
-<td>字符串第一个字符的ASCII码</td>
+<td>字符串第一个字符的 ASCII 码</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>(chr 整数)</code></td>
-<td>整数所对应的ASCII单一字符串</td>
+<td>整数所对应的 ASCII 单一字符串</td>
 <td>-</td>
 </tr>
 <tr>
@@ -842,7 +791,7 @@
 </tr>
 <tr>
 <td><code>(strcase 字符串 [字样])</code></td>
-<td>字符串大小写， [字样]为T，小写；忽略，大写</td>
+<td>字符串大小写， [字样]为 T，小写；忽略，大写</td>
 <td>-</td>
 </tr>
 <tr>
@@ -862,12 +811,12 @@
 </tr>
 <tr>
 <td><code>(wcmatch 字符串 格式)</code></td>
-<td>T或nil，将字符串与通用字符进行比较</td>
+<td>T 或 nil，将字符串与通用字符进行比较</td>
 <td>-</td>
 </tr>
 <tr>
 <td><code>(write-char 数值 [文件路径])</code></td>
-<td>将一ASCII字符写到文件或屏幕</td>
+<td>将一 ASCII 字符写到文件或屏幕</td>
 <td>-</td>
 </tr>
 <tr>
@@ -875,9 +824,7 @@
 <td>将字符串写到文件或屏幕上</td>
 <td>-</td>
 </tr>
-</tbody>
-</table>
-<p><a name="UOHCE"></a></p>
+</tbody></table>
 <h2 id="6-等待输入函数"><a href="#6-等待输入函数" class="headerlink" title="6. 等待输入函数"></a>6. 等待输入函数</h2><table>
 <thead>
 <tr>
@@ -885,8 +832,7 @@
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(getangle [基点] [提示])</code></td>
 <td>请求输入十进制角度数值，响应一个弧度值。提示及参考点可选</td>
 </tr>
@@ -908,7 +854,7 @@
 </tr>
 <tr>
 <td><code>(getorient [基点] [提示])</code></td>
-<td>请求输入十进制角度，响应一弧度值不受angbase、angdir影响</td>
+<td>请求输入十进制角度，响应一弧度值不受 angbase、angdir 影响</td>
 </tr>
 <tr>
 <td><code>(getpoint [基点] [提示])</code></td>
@@ -924,12 +870,10 @@
 </tr>
 <tr>
 <td><code>(initget [位] 字符串)</code></td>
-<td>设定下次getxxx函数的有效输入</td>
+<td>设定下次 getxxx 函数的有效输入</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><a name="QKgPt"></a></p>
 <h2 id="7-几何运算函数"><a href="#7-几何运算函数" class="headerlink" title="7. 几何运算函数"></a>7. 几何运算函数</h2><table>
 <thead>
 <tr>
@@ -937,8 +881,7 @@
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(angle 点1 点2)</code></td>
 <td>取得两点的角度弧度值</td>
 </tr>
@@ -962,10 +905,8 @@
 <td><code>(textbox 对象列表)</code></td>
 <td>取得文字对象的两个对角点坐标</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><a name="nFXUv"></a></p>
 <h2 id="8-对象处理函数"><a href="#8-对象处理函数" class="headerlink" title="8. 对象处理函数"></a>8. 对象处理函数</h2><table>
 <thead>
 <tr>
@@ -973,8 +914,7 @@
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(entdel 对象名称)</code></td>
 <td>删除或取消删除对象</td>
 </tr>
@@ -1012,15 +952,13 @@
 </tr>
 <tr>
 <td><code>(nentsel [提示])</code></td>
-<td>返回：BLOCK所含副元体对象信息列表</td>
+<td>返回：BLOCK 所含副元体对象信息列表</td>
 </tr>
 <tr>
 <td><code>(nentselp [提示] [点])</code></td>
-<td>返回：BLOCK所含副元体对象信息（以4x4矩形表示）</td>
+<td>返回：BLOCK 所含副元体对象信息（以 4x4 矩形表示）</td>
 </tr>
-</tbody>
-</table>
-<p><a name="LrBXv"></a></p>
+</tbody></table>
 <h2 id="9-选择集、符号表处理函数"><a href="#9-选择集、符号表处理函数" class="headerlink" title="9. 选择集、符号表处理函数"></a>9. 选择集、符号表处理函数</h2><table>
 <thead>
 <tr>
@@ -1028,8 +966,7 @@
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(ssadd [对象名称] [选择集])</code></td>
 <td>将对象加入选择集或建立一新选择集</td>
 </tr>
@@ -1042,7 +979,7 @@
 <td>取得一个选择集</td>
 </tr>
 <tr>
-<td><code>(ssget &quot;X&quot; [过滤列表])</code></td>
+<td><code>(ssget "X" [过滤列表])</code></td>
 <td>取得根据过滤列表所指定范围的选择集</td>
 </tr>
 <tr>
@@ -1059,27 +996,24 @@
 </tr>
 <tr>
 <td><code>(tblnext 符号表名称 [T])</code></td>
-<td>检视符号表，有效的符号表：<code>&quot;LAYER&quot;</code> <code>&quot;LTYPE&quot;</code> <code>&quot;VIEW&quot;</code> <code>&quot;STYLE&quot;</code> <code>&quot;BLOCK&quot;</code></td>
+<td>检视符号表，有效的符号表：<code>"LAYER"</code> <code>"LTYPE"</code> <code>"VIEW"</code> <code>"STYLE"</code> <code>"BLOCK"</code></td>
 </tr>
 <tr>
 <td><code>(tblsearch 符号表名称 符号)</code></td>
 <td>在符号表中搜寻符号</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><a name="XwuvI"></a></p>
-<h2 id="10-AutoCAD相关查询、控制函数"><a href="#10-AutoCAD相关查询、控制函数" class="headerlink" title="10. AutoCAD相关查询、控制函数"></a>10. AutoCAD相关查询、控制函数</h2><table>
+<h2 id="10-AutoCAD-相关查询、控制函数"><a href="#10-AutoCAD-相关查询、控制函数" class="headerlink" title="10. AutoCAD 相关查询、控制函数"></a>10. AutoCAD 相关查询、控制函数</h2><table>
 <thead>
 <tr>
 <th>函数</th>
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td><code>(command &quot;AutoCAD命令&quot; …)</code></td>
-<td>超重量级函数，调用执行AutoCAD命令</td>
+<tbody><tr>
+<td><code>(command "AutoCAD命令" …)</code></td>
+<td>超重量级函数，调用执行 AutoCAD 命令</td>
 </tr>
 <tr>
 <td><code>(findfile 文件名)</code></td>
@@ -1087,27 +1021,25 @@
 </tr>
 <tr>
 <td><code>(getfiled 标题 内定档名 扩展名 旗号)</code></td>
-<td>通过标准AutoCAD文件对话DCL对话框获得文件</td>
+<td>通过标准 AutoCAD 文件对话 DCL 对话框获得文件</td>
 </tr>
 <tr>
-<td><code>(getenv &quot;环境变量&quot;)</code></td>
+<td><code>(getenv "环境变量")</code></td>
 <td>取得该环境变量的设定值，以字符串表示</td>
 </tr>
 <tr>
-<td><code>(getvar &quot;系统变量&quot;)</code></td>
+<td><code>(getvar "系统变量")</code></td>
 <td>取得该系统变量的设定值，以字符串表示</td>
 </tr>
 <tr>
-<td><code>(setvar &quot;系统变量&quot; &quot;值&quot;)</code></td>
+<td><code>(setvar "系统变量" "值")</code></td>
 <td>设定该系统变量的值</td>
 </tr>
 <tr>
 <td><code>(regapp 应用类项)</code></td>
-<td>将目前的AutoCAD图形登记为一个应用程序名称</td>
+<td>将目前的 AutoCAD 图形登记为一个应用程序名称</td>
 </tr>
-</tbody>
-</table>
-<p><a name="LtN3E"></a></p>
+</tbody></table>
 <h2 id="11-判断式、循环相关函数"><a href="#11-判断式、循环相关函数" class="headerlink" title="11. 判断式、循环相关函数"></a>11. 判断式、循环相关函数</h2><table>
 <thead>
 <tr>
@@ -1115,14 +1047,13 @@
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(if &lt;比较式&gt; &lt;表达式1&gt; [表达式2])</code></td>
 <td>比较式结果为真，执行<code>&lt;表达式1&gt;</code>，否则执行<code>&lt;表达式2&gt;</code></td>
 </tr>
 <tr>
 <td><code>(repeat 次数 &lt;表达式&gt; ...)</code></td>
-<td>重复执行N次<code>&lt;表达式&gt; ...</code></td>
+<td>重复执行 N 次<code>&lt;表达式&gt; ...</code></td>
 </tr>
 <tr>
 <td><code>(while &lt;比较式&gt; &lt;表达式&gt; ...)</code></td>
@@ -1130,16 +1061,14 @@
 </tr>
 <tr>
 <td><code>(cond &lt;比较式1&gt; &lt;表达式1&gt; &lt;比较式2&gt; &lt;表达式2&gt; ...)</code></td>
-<td>多条件式的if</td>
+<td>多条件式的 if</td>
 </tr>
 <tr>
 <td><code>(progn &lt;表达式1&gt; ...)</code></td>
-<td>连接其中的表达式为一组，常配合if、cond等函数</td>
+<td>连接其中的表达式为一组，常配合 if、cond 等函数</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><a name="NSAmY"></a></p>
 <h2 id="12-函数处理、定义、追踪和错误处理函数"><a href="#12-函数处理、定义、追踪和错误处理函数" class="headerlink" title="12. 函数处理、定义、追踪和错误处理函数"></a>12. 函数处理、定义、追踪和错误处理函数</h2><table>
 <thead>
 <tr>
@@ -1147,8 +1076,7 @@
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(*error* 字符串)</code></td>
 <td>程序错误时的警示信息</td>
 </tr>
@@ -1178,7 +1106,7 @@
 </tr>
 <tr>
 <td><code>(progn 表达式1 表达式2 …)</code></td>
-<td>连接其内的表达式为一组，常用于配合if、cond等函数</td>
+<td>连接其内的表达式为一组，常用于配合 if、cond 等函数</td>
 </tr>
 <tr>
 <td><code>(quit)</code></td>
@@ -1196,10 +1124,8 @@
 <td><code>(untrace 函数 …)</code></td>
 <td>对函数设定解除追踪标记</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><a name="f1yuJ"></a></p>
 <h2 id="13-显示、打印控制函数"><a href="#13-显示、打印控制函数" class="headerlink" title="13. 显示、打印控制函数"></a>13. 显示、打印控制函数</h2><table>
 <thead>
 <tr>
@@ -1207,8 +1133,7 @@
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(gfaphscr)</code></td>
 <td>作图环境切换到图形画面</td>
 </tr>
@@ -1234,7 +1159,7 @@
 </tr>
 <tr>
 <td><code>(menucmd 字符串)</code></td>
-<td>；提供在AlltOLISP中调用各菜单</td>
+<td>；提供在 AlltOLISP 中调用各菜单</td>
 </tr>
 <tr>
 <td><code>(prin1 [表达式 [文件代码]])</code></td>
@@ -1242,15 +1167,15 @@
 </tr>
 <tr>
 <td><code>(pinc [表达式 [文件代码]])</code></td>
-<td>除句柄字符则不以”＼”为前缀展外开其余同Prinl</td>
+<td>除句柄字符则不以”＼”为前缀展外开其余同 Prinl</td>
 </tr>
 <tr>
 <td><code>(print [表达式 [文件代码]])</code></td>
-<td>除表达式会往下一新行列出，及空一格外其余同prinl</td>
+<td>除表达式会往下一新行列出，及空一格外其余同 prinl</td>
 </tr>
 <tr>
 <td><code>(prompt 信息)</code></td>
-<td>将信息显示于屏幕的命令区，并随后响应一个nil信息</td>
+<td>将信息显示于屏幕的命令区，并随后响应一个 nil 信息</td>
 </tr>
 <tr>
 <td><code>(redraw [对象名称 [模式]])</code></td>
@@ -1266,16 +1191,14 @@
 </tr>
 <tr>
 <td><code>(textpage)</code></td>
-<td>清除文字画面文字类似DOS的cls命令</td>
+<td>清除文字画面文字类似 DOS 的 cls 命令</td>
 </tr>
 <tr>
 <td><code>(vports)</code></td>
 <td>窗口组态列表</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><a name="8RMj5"></a></p>
 <h2 id="14-符号、元素、表达式处理函数"><a href="#14-符号、元素、表达式处理函数" class="headerlink" title="14. 符号、元素、表达式处理函数"></a>14. 符号、元素、表达式处理函数</h2><table>
 <thead>
 <tr>
@@ -1283,10 +1206,9 @@
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(atom 元素)</code></td>
-<td>如果元素不是列表，返回T，否则为nil</td>
+<td>如果元素不是列表，返回 T，否则为 nil</td>
 </tr>
 <tr>
 <td><code>(atoms-family 格式 [符号号列表])</code></td>
@@ -1294,7 +1216,7 @@
 </tr>
 <tr>
 <td><code>(boundp 表达式)</code></td>
-<td>T或nil，响应表达式是否有值存在</td>
+<td>T 或 nil，响应表达式是否有值存在</td>
 </tr>
 <tr>
 <td><code>(minusp 元素)</code></td>
@@ -1302,11 +1224,11 @@
 </tr>
 <tr>
 <td><code>(not 元素)</code></td>
-<td>判定元素是否为nil</td>
+<td>判定元素是否为 nil</td>
 </tr>
 <tr>
 <td><code>(null 元素)</code></td>
-<td>判定元素是否被赋予nil值</td>
+<td>判定元素是否被赋予 nil 值</td>
 </tr>
 <tr>
 <td><code>(numberp 元素)</code></td>
@@ -1314,7 +1236,7 @@
 </tr>
 <tr>
 <td><code>(quote 表达式)</code></td>
-<td>响应表达式未检算前状态，同<code>&#39;</code>功能</td>
+<td>响应表达式未检算前状态，同<code>'</code>功能</td>
 </tr>
 <tr>
 <td><code>(set 符号 表达式)</code></td>
@@ -1330,60 +1252,56 @@
 </tr>
 <tr>
 <td><code>(zerop 元素)</code></td>
-<td>判定元素是否为0值</td>
+<td>判定元素是否为 0 值</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
-<p><a name="O9Nf4"></a></p>
-<h2 id="15-ADS、ARX、AutoLISP加载与卸载函数"><a href="#15-ADS、ARX、AutoLISP加载与卸载函数" class="headerlink" title="15. ADS、ARX、AutoLISP加载与卸载函数"></a>15. ADS、ARX、AutoLISP加载与卸载函数</h2><table>
+<h2 id="15-ADS、ARX、AutoLISP-加载与卸载函数"><a href="#15-ADS、ARX、AutoLISP-加载与卸载函数" class="headerlink" title="15. ADS、ARX、AutoLISP 加载与卸载函数"></a>15. ADS、ARX、AutoLISP 加载与卸载函数</h2><table>
 <thead>
 <tr>
 <th>函数</th>
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>(ads)</code></td>
-<td>目前加载ADS程序列表</td>
+<td>目前加载 ADS 程序列表</td>
 </tr>
 <tr>
 <td><code>(arx)</code></td>
-<td>目前加载ARX程序列表</td>
+<td>目前加载 ARX 程序列表</td>
 </tr>
 <tr>
 <td><code>(arxload 应用程序 [出错处理]))</code></td>
-<td>加载ARX程序</td>
+<td>加载 ARX 程序</td>
 </tr>
 <tr>
 <td><code>(arxunload 应用程序 [出错处理]))</code></td>
-<td>卸载ARX程序</td>
+<td>卸载 ARX 程序</td>
 </tr>
 <tr>
 <td><code>(ver)</code></td>
-<td>目前AutoLISP版本字符串</td>
+<td>目前 AutoLISP 版本字符串</td>
 </tr>
 <tr>
 <td><code>(load LSP文件名 [加载失败])</code></td>
-<td>加载AutoLISP文件(*．lsp)</td>
+<td>加载 AutoLISP 文件(*．lsp)</td>
 </tr>
 <tr>
 <td><code>(xload 应用程序 [错处理])</code></td>
-<td>加载ADS应用程序</td>
+<td>加载 ADS 应用程序</td>
 </tr>
 <tr>
 <td><code>(xunload 应用程序 [出错处理])</code></td>
-<td>卸载ADS应用程序</td>
+<td>卸载 ADS 应用程序</td>
 </tr>
-</tbody>
-</table>
-<p>作者：吴吉光<br>链接：<a href="https://www.jianshu.com/p/067ea05a425c" target="_blank" rel="noopener">https://www.jianshu.com/p/067ea05a425c</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
-<p>作者：吴吉光<br>链接：<a href="https://www.jianshu.com/p/57578dc48f11" target="_blank" rel="noopener">https://www.jianshu.com/p/57578dc48f11</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
-<p>作者：吴吉光<br>链接：<a href="https://www.jianshu.com/p/41fd1a86939a" target="_blank" rel="noopener">https://www.jianshu.com/p/41fd1a86939a</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+</tbody></table>
+<p>作者：吴吉光<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/067ea05a425c">https://www.jianshu.com/p/067ea05a425c</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+<p>作者：吴吉光<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/57578dc48f11">https://www.jianshu.com/p/57578dc48f11</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+<p>作者：吴吉光<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/41fd1a86939a">https://www.jianshu.com/p/41fd1a86939a</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
 
             </div>
-            <hr>
+            <hr/>
 
             
 
@@ -1392,17 +1310,17 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        Author:
+                        文章作者:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Serenity</a>
+                    <a href="/about" rel="external nofollow noreferrer">慕书</a>
                 </span>
             </div>
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        Link:
+                        文章链接:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -1412,14 +1330,14 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        Reprint policy:
+                        版权声明:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    All articles in this blog are used except for special statements
+                    本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    reprint polocy. If reproduced, please indicate source
-                    <a href="/about" target="_blank">Serenity</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">慕书</a>
                     !
                 </span>
             </div>
@@ -1428,7 +1346,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
@@ -1443,7 +1361,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1611,7 +1529,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2019/08/16/yuque/pvc0y4/">
                     <div class="card-image">
@@ -1626,8 +1544,8 @@
                     <div class="summary block-with-text">
                         
                             安装和配置暂不写有时间更新。
-
-同步指令只需一下两条。12yuque-hexo sync &amp;&amp; yuque-hexo clean  #更新同步语雀中文文章并清楚语雀的缓存npm run sync &amp;&amp; hex
+同步指令只需一下两条。yuque-hexo sync &amp;&amp; yuque-hexo clean  #更新同步语雀中文文章并清楚语雀的缓存
+npm run sync &amp;&amp; hexo 
                         
                     </div>
                     <div class="publish-info">
@@ -1637,7 +1555,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Serenity
+                            慕书
                             
                         </span>
                     </div>
@@ -1649,7 +1567,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/04/18/yuque/ft6znq/">
@@ -1664,7 +1582,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n)，使得T(n)/f(n)的极限值（当n趋近于无穷大时）为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作T(n)=O(f(
+                            1.一般情况下，算法中基本操作重复执行的次数是问题规模 n 的某个函数，用 T(n)表示，若有某个辅助函数 f(n)，使得 T(n)/f(n)的极限值（当 n 趋近于无穷大时）为不等于零的常数，则称 f(n)是 T(n)的同数量级函数。记作
                         
                     </div>
                     <div class="publish-info">
@@ -1674,7 +1592,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Serenity
+                            慕书
                             
                         </span>
                     </div>
@@ -1718,7 +1636,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1851,7 +1769,19 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div class="">
     
     <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12" server="netease" type="playlist" id="503838841" fixed="true" autoplay="false" theme="#42b983" loop="all" order="random" preload="auto" volume="0.7" list-folded="true">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
         </meting-js>
     </div>
 </div>
@@ -1864,10 +1794,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="/about" target="_blank">Serenity</a>
+            <a href="/about" target="_blank">慕书</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">24.1k</span>&nbsp;字
             
             
             
@@ -1875,12 +1808,14 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
             
             <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
             </span>
             
             
             <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
             </span>
             
             <br>
@@ -1915,10 +1850,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
 
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
 </div>
     </div>
 </footer>
@@ -1930,8 +1861,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
-            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword" class="search-input">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
