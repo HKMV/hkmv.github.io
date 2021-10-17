@@ -1,0 +1,2368 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="AutoLisp中常见的函数（转）, 慕书">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- <meta name="referrer" content="no-referrer-when-downgrade"> -->
+    <meta name="referrer" content="no-referrer">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>AutoLisp中常见的函数（转） | 慕书</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">慕书</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">慕书</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">AutoLisp中常见的函数（转）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 55px;
+        bottom: 215px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-05-10
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-10-17
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    12 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>一般的，用方括号<code>[ ]</code>包围的变量都是可有可无的。</p>
+<h2 id="1-数学运算函数"><a href="#1-数学运算函数" class="headerlink" title="1. 数学运算函数"></a>1. 数学运算函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(+ 数值1 数值2 …)</code></td>
+<td>累计实数或整数数值</td>
+<td>一个或多个参数</td>
+</tr>
+<tr>
+<td><code>(- 数值1 数值2 …)</code></td>
+<td>第一个数值减去第二个及以后数值的差</td>
+<td>一个或多个参数</td>
+</tr>
+<tr>
+<td><code>(* 数值1 数值2 …)</code></td>
+<td>所有数值乘积</td>
+<td>一个或多个参数</td>
+</tr>
+<tr>
+<td><code>(/ 数值1 数值2 …)</code></td>
+<td>第一个数值除以第二个以后数值的商</td>
+<td>一个或多个参数</td>
+</tr>
+<tr>
+<td><code>(l+ 数值)</code></td>
+<td>数值+l</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(1- 数值)</code></td>
+<td>数值-l</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(abs 数值)</code></td>
+<td>数值的绝对值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(atan 数值1 [数值2])</code></td>
+<td>反正切值</td>
+<td>可以有两个参数</td>
+</tr>
+<tr>
+<td><code>(cos 角度)</code></td>
+<td>角度的余弦值</td>
+<td>角度值为弧度</td>
+</tr>
+<tr>
+<td><code>(exp 数值)</code></td>
+<td>自然常数 e 为底的指数</td>
+<td>e 的值约为 2.71828</td>
+</tr>
+<tr>
+<td><code>(expt 底数 指数)</code></td>
+<td>底数的指数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(fix 数值)</code></td>
+<td>将数值转换为整数值</td>
+<td>直接忽略小数部分</td>
+</tr>
+<tr>
+<td><code>(float数值)</code></td>
+<td>将数值转换为实数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(gcd 数值1 数值2)</code></td>
+<td>两数值的最大公因数</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(log 数值)</code></td>
+<td>数值的自然对数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(max 数值1 数值2 …)</code></td>
+<td>数值中的最大值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(min 数值1 数值2 …)</code></td>
+<td>数值中的最小值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>pi</code></td>
+<td>常数 π，不是函数，使用时不用加括号</td>
+<td>其值约为<code>3.141593</code></td>
+</tr>
+<tr>
+<td><code>(rem 数值1 数值2)</code></td>
+<td>数值 1 除以数值 2 得到余数</td>
+<td>余数的正负与被除数相同</td>
+</tr>
+<tr>
+<td><code>(sin 角度)</code></td>
+<td>角度的正弦值</td>
+<td>角度值为弧度</td>
+</tr>
+<tr>
+<td><code>(sqrt 数值)</code></td>
+<td>数值的平方根</td>
+<td>平方根为非负</td>
+</tr>
+</tbody></table>
+<p>AutoLisp 语言支持的三角函数只有两个：正弦和余弦；支持的反三角函数只有一个：反正切。（不知道对不对，我暂时没发现别的。）</p>
+<hr>
+<h2 id="2-检验与逻辑函数"><a href="#2-检验与逻辑函数" class="headerlink" title="2. 检验与逻辑函数"></a>2. 检验与逻辑函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(= 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否全部都相同，适用数值及字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(／= 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否全部都不同</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(＜ 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否严格递增</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(＜= 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否递不减</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(＞ 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否严格递减</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(＞= 表达式1 表达式2 ...)</code></td>
+<td>比较表达式是否递不增</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(~ 数值)</code></td>
+<td>数值的位 not 值</td>
+<td>1 的补码</td>
+</tr>
+<tr>
+<td><code>(and 表达式1 表达式2…)</code></td>
+<td>逻辑 and 的结果</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(boole 函数 整数 整数…)</code></td>
+<td>位式布尔运算</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(eq 表达式1 表达式2)</code></td>
+<td>比较表达式 1 与表达式 2 是否相同，适用列表比较</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(equal 表达式1 表达式2 [差量])</code></td>
+<td>比较表达式 1 与表达式 2 是否相同，差量可省略</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>对于检验函数，若表达式为真，则返回<code>T</code>；反之，则返回<code>nil</code>。</p>
+<hr>
+<h2 id="3-转换运算函数"><a href="#3-转换运算函数" class="headerlink" title="3.转换运算函数"></a>3.转换运算函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(angtof 字符串 [模式])</code></td>
+<td>角度值的字符串转成实数</td>
+<td>返回弧度值</td>
+</tr>
+<tr>
+<td><code>(angtos 角度 [模式] [精度] )</code></td>
+<td>角度转成的字符串值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(atof 字符串)</code></td>
+<td>字符串转成实数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(atoi 字符串)</code></td>
+<td>字符串转成整数值</td>
+<td>忽略小数位</td>
+</tr>
+<tr>
+<td><code>(cvunit 数值原始单位 转换单位)</code></td>
+<td>数值换算单位后的值</td>
+<td>转换根据 acad.unt 文件</td>
+</tr>
+<tr>
+<td><code>(distof 字符串 [模式])</code></td>
+<td>根据模式将字符串转成实数值</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(itoa 整数)</code></td>
+<td>整数转成字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(rtos 数值模式 [精度])</code></td>
+<td>实数转成字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(trans 点 原位置 新位置 [位移])</code></td>
+<td>转换坐标系统值</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="4-表处理函数"><a href="#4-表处理函数" class="headerlink" title="4.表处理函数"></a>4.表处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(append 表1 表2 ...)</code></td>
+<td>结合所有表成一个表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(assoc 关键元素 联合表)</code></td>
+<td>根据关键元素找寻联合表中关系信息</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(car 表)</code></td>
+<td>表中的第一个元素，通常用来求 X 坐标</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(cadr 表)</code></td>
+<td>表中的第二个元素，通常用来求 y 坐标</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(caddr 表)</code></td>
+<td>表中的第三个元素，通常用来求 Z 坐标</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(cdr 表)</code></td>
+<td>除去第一个元素后的表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(cons 新元素 表)</code></td>
+<td>将新元素添加到表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(foreach 名称 表 表达式)</code></td>
+<td>将表的每一元素对应至名称再根据表达式执行响应</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(length 表)</code></td>
+<td>表内的元素数量</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(list 元素 元素 ...)</code></td>
+<td>将所有元素合并为一表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(listp 元素)</code></td>
+<td>判断元素是否为一串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(mapcar 函数 表1 表2 …)</code></td>
+<td>将表 1、表 2 表的元素配合函数，求得新表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(member 关键元素 表)</code></td>
+<td>关键元素(含)以后的表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nth n 表)</code></td>
+<td>表的第 n 个元素</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(reverse 表)</code></td>
+<td>将表元素根据顺序颠倒过来的表</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(subst 新项 旧项 表)</code></td>
+<td>替换新旧表后的表</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="5-字符串、字符、文件处理函数"><a href="#5-字符串、字符、文件处理函数" class="headerlink" title="5.字符串、字符、文件处理函数"></a>5.字符串、字符、文件处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(ascii 字符串)</code></td>
+<td>字符串第一个字符的 ASCII 码</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(chr 整数)</code></td>
+<td>整数所对应的 ASCII 单一字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(close 文件名称)</code></td>
+<td>关闭文件</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(open 文件名 模式)</code></td>
+<td>打开文件代码，准备读取或写入信息</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(read 字符串)</code></td>
+<td>列表中的字符串的第一组元素</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(read-char [文件路径])</code></td>
+<td>通过键盘或文件中读取单一字符</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(read-line [文件路径])</code></td>
+<td>经由键盘或文件中读取一行字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(strcase 字符串 [字样])</code></td>
+<td>字符串大小写， [字样]为 T，小写；忽略，大写</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(strcat 字符串1 字符串2 …)</code></td>
+<td>将各字符串合并为一个字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(strlen 字符串)</code></td>
+<td>字符串构成的字符数(即长度)</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(substr 字符串 起始 长度)</code></td>
+<td>取出于字符串</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(wcmatch 字符串 格式)</code></td>
+<td>T 或 nil，将字符串与通用字符进行比较</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(write-char 数值 [文件路径])</code></td>
+<td>将一 ASCII 字符写到文件或屏幕</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(write-line 字符串 [文件路径])</code></td>
+<td>将字符串写到文件或屏幕上</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id="6-等待输入函数"><a href="#6-等待输入函数" class="headerlink" title="6. 等待输入函数"></a>6. 等待输入函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(getangle [基点] [提示])</code></td>
+<td>请求输入十进制角度数值，响应一个弧度值。提示及参考点可选</td>
+</tr>
+<tr>
+<td><code>(getcorner 基点 [提示])</code></td>
+<td>请求输入另一矩形框对角点坐标</td>
+</tr>
+<tr>
+<td><code>(getdist [基点] [提示])</code></td>
+<td>请求输入一段距离</td>
+</tr>
+<tr>
+<td><code>(getint [提示])</code></td>
+<td>请求输入一个整数值</td>
+</tr>
+<tr>
+<td><code>(getkword [提示] )</code></td>
+<td>请求输入“关键词”</td>
+</tr>
+<tr>
+<td><code>(getorient [基点] [提示])</code></td>
+<td>请求输入十进制角度，响应一弧度值不受 angbase、angdir 影响</td>
+</tr>
+<tr>
+<td><code>(getpoint [基点] [提示])</code></td>
+<td>请求输入一个点的坐标</td>
+</tr>
+<tr>
+<td><code>(getreal [提示])</code></td>
+<td>请求输入一个实数</td>
+</tr>
+<tr>
+<td><code>(getstring [提示])</code></td>
+<td>请求输入一个字符串</td>
+</tr>
+<tr>
+<td><code>(initget [位] 字符串)</code></td>
+<td>设定下次 getxxx 函数的有效输入</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="7-几何运算函数"><a href="#7-几何运算函数" class="headerlink" title="7. 几何运算函数"></a>7. 几何运算函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(angle 点1 点2)</code></td>
+<td>取得两点的角度弧度值</td>
+</tr>
+<tr>
+<td><code>(distance 点1 点2)</code></td>
+<td>取得两点的距离</td>
+</tr>
+<tr>
+<td><code>(inters 点1 点2 点3 点4［模式］)</code></td>
+<td>取得两条线的交点</td>
+</tr>
+<tr>
+<td><code>(osnap 点 模式字符串)</code></td>
+<td>按照捕捉模式取得另一坐标点</td>
+</tr>
+<tr>
+<td><code>(polar 基点 弧度 距离)</code></td>
+<td>按照极坐标法取得另一坐标点</td>
+</tr>
+<tr>
+<td><code>(textbox 对象列表)</code></td>
+<td>取得文字对象的两个对角点坐标</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="8-对象处理函数"><a href="#8-对象处理函数" class="headerlink" title="8. 对象处理函数"></a>8. 对象处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(entdel 对象名称)</code></td>
+<td>删除或取消删除对象</td>
+</tr>
+<tr>
+<td><code>(entget 对象名称［应用程序列表］)</code></td>
+<td>取出对象名称的信息列表</td>
+</tr>
+<tr>
+<td><code>(entlast)</code></td>
+<td>取出图形信息中的最后一个对象</td>
+</tr>
+<tr>
+<td><code>(entmake 对象列表)</code></td>
+<td>建立一个新的对象列表</td>
+</tr>
+<tr>
+<td><code>(entmod 对象列表)</code></td>
+<td>根据更新的信息列表更新屏幕上元体</td>
+</tr>
+<tr>
+<td><code>(entnext [对象名称])</code></td>
+<td>找寻图面中的下一个对象</td>
+</tr>
+<tr>
+<td><code>(entsel [提示])</code></td>
+<td>请求选取一个对象，响应包含对象名称及选点坐标的列表；</td>
+</tr>
+<tr>
+<td><code>(entupd 对象名称)</code></td>
+<td>更新屏幕上复元体图形</td>
+</tr>
+<tr>
+<td><code>(handent 图码)</code></td>
+<td>返回：图码的元体名称</td>
+</tr>
+<tr>
+<td><code>(nentsel [提示])</code></td>
+<td>返回：BLOCK 所含副元体对象信息列表</td>
+</tr>
+<tr>
+<td><code>(nentselp [提示] [点])</code></td>
+<td>返回：BLOCK 所含副元体对象信息（以 4x4 矩形表示）</td>
+</tr>
+</tbody></table>
+<h2 id="9-选择集、符号表处理函数"><a href="#9-选择集、符号表处理函数" class="headerlink" title="9. 选择集、符号表处理函数"></a>9. 选择集、符号表处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(ssadd [对象名称] [选择集])</code></td>
+<td>将对象加入选择集或建立一新选择集</td>
+</tr>
+<tr>
+<td><code>(ssdel 对象名称 选择集)</code></td>
+<td>将对象自选择集中移出</td>
+</tr>
+<tr>
+<td><code>(ssget [模式] [点1] [点2])</code></td>
+<td>取得一个选择集</td>
+</tr>
+<tr>
+<td><code>(ssget "X" [过滤列表])</code></td>
+<td>取得根据过滤列表所指定范围的选择集</td>
+</tr>
+<tr>
+<td><code>(sslenth 选择集)</code></td>
+<td>计算选择集的对象个数</td>
+</tr>
+<tr>
+<td><code>(ssmemb 对象名称 选择集)</code></td>
+<td>响应对象名称是否包含于选择集内</td>
+</tr>
+<tr>
+<td><code>(ssname 选择集 索引值)</code></td>
+<td>根据索引值取出选择集中的对象名称</td>
+</tr>
+<tr>
+<td><code>(tblnext 符号表名称 [T])</code></td>
+<td>检视符号表，有效的符号表：<code>"LAYER"</code> <code>"LTYPE"</code> <code>"VIEW"</code> <code>"STYLE"</code> <code>"BLOCK"</code></td>
+</tr>
+<tr>
+<td><code>(tblsearch 符号表名称 符号)</code></td>
+<td>在符号表中搜寻符号</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="10-AutoCAD-相关查询、控制函数"><a href="#10-AutoCAD-相关查询、控制函数" class="headerlink" title="10. AutoCAD 相关查询、控制函数"></a>10. AutoCAD 相关查询、控制函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(command "AutoCAD命令" …)</code></td>
+<td>超重量级函数，调用执行 AutoCAD 命令</td>
+</tr>
+<tr>
+<td><code>(findfile 文件名)</code></td>
+<td>返回：该文件名的路径及文件名</td>
+</tr>
+<tr>
+<td><code>(getfiled 标题 内定档名 扩展名 旗号)</code></td>
+<td>通过标准 AutoCAD 文件对话 DCL 对话框获得文件</td>
+</tr>
+<tr>
+<td><code>(getenv "环境变量")</code></td>
+<td>取得该环境变量的设定值，以字符串表示</td>
+</tr>
+<tr>
+<td><code>(getvar "系统变量")</code></td>
+<td>取得该系统变量的设定值，以字符串表示</td>
+</tr>
+<tr>
+<td><code>(setvar "系统变量" "值")</code></td>
+<td>设定该系统变量的值</td>
+</tr>
+<tr>
+<td><code>(regapp 应用类项)</code></td>
+<td>将目前的 AutoCAD 图形登记为一个应用程序名称</td>
+</tr>
+</tbody></table>
+<h2 id="11-判断式、循环相关函数"><a href="#11-判断式、循环相关函数" class="headerlink" title="11. 判断式、循环相关函数"></a>11. 判断式、循环相关函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(if &lt;比较式&gt; &lt;表达式1&gt; [表达式2])</code></td>
+<td>比较式结果为真，执行<code>&lt;表达式1&gt;</code>，否则执行<code>&lt;表达式2&gt;</code></td>
+</tr>
+<tr>
+<td><code>(repeat 次数 &lt;表达式&gt; ...)</code></td>
+<td>重复执行 N 次<code>&lt;表达式&gt; ...</code></td>
+</tr>
+<tr>
+<td><code>(while &lt;比较式&gt; &lt;表达式&gt; ...)</code></td>
+<td>当条件成立则执行表达式内容</td>
+</tr>
+<tr>
+<td><code>(cond &lt;比较式1&gt; &lt;表达式1&gt; &lt;比较式2&gt; &lt;表达式2&gt; ...)</code></td>
+<td>多条件式的 if</td>
+</tr>
+<tr>
+<td><code>(progn &lt;表达式1&gt; ...)</code></td>
+<td>连接其中的表达式为一组，常配合 if、cond 等函数</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="12-函数处理、定义、追踪和错误处理函数"><a href="#12-函数处理、定义、追踪和错误处理函数" class="headerlink" title="12. 函数处理、定义、追踪和错误处理函数"></a>12. 函数处理、定义、追踪和错误处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(*error* 字符串)</code></td>
+<td>程序错误时的警示信息</td>
+</tr>
+<tr>
+<td><code>(alert 字符串)</code></td>
+<td>以对话框式显示出警告字符串</td>
+</tr>
+<tr>
+<td><code>(apply 功能函数 列表)</code></td>
+<td>将功能函数与列表结合后执行</td>
+</tr>
+<tr>
+<td><code>(defun 名称 自变量列表 表达式)</code></td>
+<td>自定函数或子程序</td>
+</tr>
+<tr>
+<td><code>(eval 表达式)</code></td>
+<td>表达式的执行结果</td>
+</tr>
+<tr>
+<td><code>(exit)</code></td>
+<td>强制退出目前的应用程序</td>
+</tr>
+<tr>
+<td><code>(lambda 自变量 表达式)</code></td>
+<td>定义匿名的函数</td>
+</tr>
+<tr>
+<td><code>(progn 表达式1 表达式2 …)</code></td>
+<td>连接其内的表达式为一组，常用于配合 if、cond 等函数</td>
+</tr>
+<tr>
+<td><code>(quit)</code></td>
+<td>强制退出目前的应用程序</td>
+</tr>
+<tr>
+<td><code>(tablet 代码 [列1 列2 列3 方向])</code></td>
+<td>取用或建立对数字化仪的校调</td>
+</tr>
+<tr>
+<td><code>(trace 函数 …)</code></td>
+<td>对函数设定追踪标记，辅助检错</td>
+</tr>
+<tr>
+<td><code>(untrace 函数 …)</code></td>
+<td>对函数设定解除追踪标记</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="13-显示、打印控制函数"><a href="#13-显示、打印控制函数" class="headerlink" title="13. 显示、打印控制函数"></a>13. 显示、打印控制函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(gfaphscr)</code></td>
+<td>作图环境切换到图形画面</td>
+</tr>
+<tr>
+<td><code>(grclear)</code></td>
+<td>暂时清除模前的屏幕画面</td>
+</tr>
+<tr>
+<td><code>(grdraw 起点 终点 颜色 [亮显])</code></td>
+<td>暂时性的画出一条线</td>
+</tr>
+<tr>
+<td><code>(grread [追踪])</code></td>
+<td>由输入设备读取追踪值</td>
+</tr>
+<tr>
+<td><code>(grtext 位置 字符串 [亮显])</code></td>
+<td>将字符串显示在状态列或屏幕菜单上</td>
+</tr>
+<tr>
+<td><code>(grvecs 向量列表 [转置矩阵])</code></td>
+<td>暂时性的画出多条线</td>
+</tr>
+<tr>
+<td><code>(menucmd 字符串)</code></td>
+<td>；提供在 AlltOLISP 中调用各菜单</td>
+</tr>
+<tr>
+<td><code>(prin1 [表达式 [文件代码]])</code></td>
+<td>将表达式打印于命令区或已打开的文件句柄字符则以“\”为前缀展开</td>
+</tr>
+<tr>
+<td><code>(pinc [表达式 [文件代码]])</code></td>
+<td>除句柄字符则不以”＼”为前缀展外开其余同 Prinl</td>
+</tr>
+<tr>
+<td><code>(print [表达式 [文件代码]])</code></td>
+<td>除表达式会往下一新行列出，及空一格外其余同 prinl</td>
+</tr>
+<tr>
+<td><code>(prompt 信息)</code></td>
+<td>将信息显示于屏幕的命令区，并随后响应一个 nil 信息</td>
+</tr>
+<tr>
+<td><code>(redraw [对象名称 [模式]])</code></td>
+<td>重绘整张图或根据对象名称重绘该图形</td>
+</tr>
+<tr>
+<td><code>(terpri)</code></td>
+<td>在屏幕上显示新列</td>
+</tr>
+<tr>
+<td><code>(textscr)</code></td>
+<td>作图环境切换到文字画面</td>
+</tr>
+<tr>
+<td><code>(textpage)</code></td>
+<td>清除文字画面文字类似 DOS 的 cls 命令</td>
+</tr>
+<tr>
+<td><code>(vports)</code></td>
+<td>窗口组态列表</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="14-符号、元素、表达式处理函数"><a href="#14-符号、元素、表达式处理函数" class="headerlink" title="14. 符号、元素、表达式处理函数"></a>14. 符号、元素、表达式处理函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(atom 元素)</code></td>
+<td>如果元素不是列表，返回 T，否则为 nil</td>
+</tr>
+<tr>
+<td><code>(atoms-family 格式 [符号号列表])</code></td>
+<td>一组己定义函数的符号列表</td>
+</tr>
+<tr>
+<td><code>(boundp 表达式)</code></td>
+<td>T 或 nil，响应表达式是否有值存在</td>
+</tr>
+<tr>
+<td><code>(minusp 元素)</code></td>
+<td>判定元素是否为负值</td>
+</tr>
+<tr>
+<td><code>(not 元素)</code></td>
+<td>判定元素是否为 nil</td>
+</tr>
+<tr>
+<td><code>(null 元素)</code></td>
+<td>判定元素是否被赋予 nil 值</td>
+</tr>
+<tr>
+<td><code>(numberp 元素)</code></td>
+<td>判定元素是否为整数或实数</td>
+</tr>
+<tr>
+<td><code>(quote 表达式)</code></td>
+<td>响应表达式未检算前状态，同<code>'</code>功能</td>
+</tr>
+<tr>
+<td><code>(set 符号 表达式)</code></td>
+<td>将表达式结果设定给带单引号’符号</td>
+</tr>
+<tr>
+<td><code>(setq 符号1 表达式1 [符号2 表达式2] …)</code></td>
+<td>设定表达式结果给各符号</td>
+</tr>
+<tr>
+<td><code>(type 元素)</code></td>
+<td>元素的信息型态</td>
+</tr>
+<tr>
+<td><code>(zerop 元素)</code></td>
+<td>判定元素是否为 0 值</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="15-ADS、ARX、AutoLISP-加载与卸载函数"><a href="#15-ADS、ARX、AutoLISP-加载与卸载函数" class="headerlink" title="15. ADS、ARX、AutoLISP 加载与卸载函数"></a>15. ADS、ARX、AutoLISP 加载与卸载函数</h2><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(ads)</code></td>
+<td>目前加载 ADS 程序列表</td>
+</tr>
+<tr>
+<td><code>(arx)</code></td>
+<td>目前加载 ARX 程序列表</td>
+</tr>
+<tr>
+<td><code>(arxload 应用程序 [出错处理]))</code></td>
+<td>加载 ARX 程序</td>
+</tr>
+<tr>
+<td><code>(arxunload 应用程序 [出错处理]))</code></td>
+<td>卸载 ARX 程序</td>
+</tr>
+<tr>
+<td><code>(ver)</code></td>
+<td>目前 AutoLISP 版本字符串</td>
+</tr>
+<tr>
+<td><code>(load LSP文件名 [加载失败])</code></td>
+<td>加载 AutoLISP 文件(*．lsp)</td>
+</tr>
+<tr>
+<td><code>(xload 应用程序 [错处理])</code></td>
+<td>加载 ADS 应用程序</td>
+</tr>
+<tr>
+<td><code>(xunload 应用程序 [出错处理])</code></td>
+<td>卸载 ADS 应用程序</td>
+</tr>
+</tbody></table>
+<p>作者：吴吉光<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/067ea05a425c">https://www.jianshu.com/p/067ea05a425c</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+<p>作者：吴吉光<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/57578dc48f11">https://www.jianshu.com/p/57578dc48f11</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+<p>作者：吴吉光<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/41fd1a86939a">https://www.jianshu.com/p/41fd1a86939a</a><br>来源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">慕书</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.codeslife.top/2019/05/10/yuque/nml8vh/">http://www.codeslife.top/2019/05/10/yuque/nml8vh/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">慕书</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'sSUetds9tGB8NngaKbmBDIwS-MdYXbMMI',
+        appKey: 'RJyvyK5P9n4da68emPzSSq9Y',
+        notify: 'true' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '6',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/08/16/yuque/pvc0y4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="使用语雀编辑器写文章  同步到hexo">
+                        
+                        <span class="card-title">使用语雀编辑器写文章  同步到hexo</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-08-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            慕书
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/04/18/yuque/ft6znq/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="时间复杂度的计算----摘自百度百科">
+                        
+                        <span class="card-title">时间复杂度的计算----摘自百度百科</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            慕书
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">慕书</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">35.8k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "6";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/hkmv" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:SerenitySir@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=572705099" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 572705099" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
