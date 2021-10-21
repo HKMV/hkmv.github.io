@@ -9,19 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
-<<<<<<< HEAD
-=======
-    <meta name="referrer" content="no-referrer">
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<<<<<<< HEAD
     <!-- <meta name="referrer" content="no-referrer-when-downgrade"> -->
     <meta name="referrer" content="no-referrer">
-=======
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -38,7 +31,6 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<<<<<<< HEAD
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
@@ -54,13 +46,6 @@
     }
 </style>
 
-=======
-<meta name="generator" content="Hexo 5.3.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
-
-
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
 
 <body>
@@ -179,11 +164,6 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-=======
-    
-
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
     <ul class="menu-list mobile-menu-list">
         
         <li class="m-nav-item">
@@ -372,13 +352,8 @@
 
     #floating-toc-btn {
         position: fixed;
-<<<<<<< HEAD
         right: 55px;
         bottom: 215px;
-=======
-        right: 15px;
-        bottom: 76px;
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
         padding-top: 15px;
         margin-bottom: 0;
         z-index: 998;
@@ -424,11 +399,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-<<<<<<< HEAD
-                    2021-10-17
-=======
-                    2021-01-29
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
+                    2021-10-21
                 </div>
                 
 
@@ -457,31 +428,20 @@
         <hr class="clearfix">
 
         
-<<<<<<< HEAD
         <!-- 是否加载使用自带的 prismjs. -->
         <link rel="stylesheet" href="/libs/prism/prism.css">
         
-=======
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="1-修改-c-c-函数-使其能够被外部调用"><a href="#1-修改-c-c-函数-使其能够被外部调用" class="headerlink" title="1.修改 c/c++函数,使其能够被外部调用"></a>1.修改 c/c++函数,使其能够被外部调用</h1><p>方法: 1.修改函数声明<br>修改前:</p>
-<<<<<<< HEAD
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span>  <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>修改后:</p>
 <pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">extern</span> <span class="token string">"C"</span> <span class="token function">_declspec</span><span class="token punctuation">(</span>dllexport<span class="token punctuation">)</span> <span class="token keyword">int</span> __stdcall <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-=======
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span>  <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-</code></pre>
-<p>修改后:</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">extern</span> <span class="token string">"C"</span> <span class="token function">_declspec</span><span class="token punctuation">(</span>dllexport<span class="token punctuation">)</span> <span class="token keyword">int</span> __stdcall <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-</code></pre>
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 <p>2.修改解决方案下要生成类库项目的类型<br>右键项目—&gt;选择属性 &nbsp; 会出现如下图的属性页</p>
 <p><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555549992989-f32cca49-773c-4c85-ad44-f5b5ddd6debd.png#align=left&amp;display=inline&amp;height=561&amp;name=image.png&amp;originHeight=561&amp;originWidth=876&amp;size=93538&amp;status=done&amp;style=none&amp;width=876" alt="image.png"><br>重新编译一下,就会发现在在输出目录出现一个 &nbsp; 项目名.dll&nbsp; 的文件 .<br><strong>如果不设置 &nbsp; 公共语言运行时支持 &nbsp; 为公共语言运行时支持(/clr)的话,&nbsp; 在 c#中是无法引用的.</strong></p>
 <h1 id="2-在-C-中调用-C-C-编写的-dll"><a href="#2-在-C-中调用-C-C-编写的-dll" class="headerlink" title="2.在 C#中调用 C/C++编写的 dll"></a>2.在 C#中调用 C/C++编写的 dll</h1><p>1.首先编写外部静态方法,然后通过注解 DllImport 指定对应的 dll 中的方法名.<br><img src="https://cdn.nlark.com/yuque/0/2019/png/264343/1555550985865-9557d691-eeb1-408c-857d-61e9fca664a0.png#align=left&amp;display=inline&amp;height=208&amp;name=image.png&amp;originHeight=208&amp;originWidth=535&amp;size=20815&amp;status=done&amp;style=none&amp;width=535" alt="image.png"> 2.就可以通过 CUitl.Main(“string”)&nbsp; 的方式进行调用了.</p>
@@ -706,7 +666,6 @@
     
 
     
-<<<<<<< HEAD
         <style>
     .valine-card {
         margin: 1.5rem auto;
@@ -973,8 +932,6 @@
 
 
     
-=======
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
     
 
@@ -1241,13 +1198,9 @@
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-<<<<<<< HEAD
 
     <div class="container row center-align"
          style="margin-bottom: 15px !important;">
-=======
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -1259,7 +1212,6 @@
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-<<<<<<< HEAD
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                         class="white-color">35.8k</span>
             
@@ -1336,28 +1288,6 @@
 
                     calcSiteTime();
                 </script>
-=======
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">24.1k</span>&nbsp;字
-            
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
             
             <br>
             
@@ -1547,14 +1477,11 @@ $(function () {
     <!--腾讯兔小巢-->
     
     
-<<<<<<< HEAD
     <script type="text/javascript" color="0,0,255"
         pointColor="0,0,255" opacity='0.7'
         zIndex="-1" count="99"
         src="/libs/background/canvas-nest.js"></script>
     
-=======
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
     
 
@@ -1564,10 +1491,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<<<<<<< HEAD
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-=======
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
 </html>

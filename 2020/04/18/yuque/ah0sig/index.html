@@ -9,19 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
-<<<<<<< HEAD
-=======
-    <meta name="referrer" content="no-referrer">
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<<<<<<< HEAD
     <!-- <meta name="referrer" content="no-referrer-when-downgrade"> -->
     <meta name="referrer" content="no-referrer">
-=======
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
@@ -38,7 +31,6 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<<<<<<< HEAD
 <meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
@@ -54,13 +46,6 @@
     }
 </style>
 
-=======
-<meta name="generator" content="Hexo 5.3.0">
-<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
-
-
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
 
 <body>
@@ -179,11 +164,6 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-=======
-    
-
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
     <ul class="menu-list mobile-menu-list">
         
         <li class="m-nav-item">
@@ -372,13 +352,8 @@
 
     #floating-toc-btn {
         position: fixed;
-<<<<<<< HEAD
         right: 55px;
         bottom: 215px;
-=======
-        right: 15px;
-        bottom: 76px;
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
         padding-top: 15px;
         margin-bottom: 0;
         z-index: 998;
@@ -424,11 +399,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-<<<<<<< HEAD
-                    2021-10-17
-=======
-                    2021-01-29
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
+                    2021-10-21
                 </div>
                 
 
@@ -457,12 +428,9 @@
         <hr class="clearfix">
 
         
-<<<<<<< HEAD
         <!-- 是否加载使用自带的 prismjs. -->
         <link rel="stylesheet" href="/libs/prism/prism.css">
         
-=======
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
         
 
@@ -471,19 +439,11 @@
                 <p>有一次同事的 gogs 账号无法登陆了，他想着看下数据库中的密码，解密没成功，他也无法以他的名字新建账号，就直接在数据库的用户表中删除了自己的用户，接着导致的 gogs 的一些功能无法使用（500）的问题，比如管理项目的协作者（分析为找不到指定用户）。</p>
 <p>1.首先说下他的账号为啥无法登陆的问题，这个问题是 win 系统下常见的一个问题，是 win 下的 Windows 凭据导致的，删除和 gogs 服务相关的凭据重新登录就好了。</p>
 <p>2.再说下 gogs 某些功能无法使用的解决方法（继续删除数据，嘿嘿），对啊，他只删除用户数据肯定是不行的，因为其他的好多表都在使用用户表的数据，还需要把使用用户数据的表中把和他相关的数据一并删掉，经过分析：</p>
-<<<<<<< HEAD
 <pre class="line-numbers language-none"><code class="language-none">项目表为：action
 协作表为：collaboration
 组织中包含的人员表：org_user
 从中删掉user_id为他之前用户的id的相关数据就好了<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-=======
-<pre><code>项目表为：action
-协作表为：collaboration
-组织中包含的人员表：org_user
-从中删掉user_id为他之前用户的id的相关数据就好了
-</code></pre>
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 <p>由于工作比较忙，这里没进一步研究，只是把他的新用户添加到项目的协作列表让他能够使用就完了。</p>
 
                 
@@ -706,7 +666,6 @@
     
 
     
-<<<<<<< HEAD
         <style>
     .valine-card {
         margin: 1.5rem auto;
@@ -973,8 +932,6 @@
 
 
     
-=======
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
     
 
@@ -1241,13 +1198,9 @@
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
     
-<<<<<<< HEAD
 
     <div class="container row center-align"
          style="margin-bottom: 15px !important;">
-=======
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
@@ -1259,7 +1212,6 @@
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
-<<<<<<< HEAD
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
                         class="white-color">35.8k</span>
             
@@ -1336,28 +1288,6 @@
 
                     calcSiteTime();
                 </script>
-=======
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">24.1k</span>&nbsp;字
-            
-            
-            
-            
-            
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            
-            <br>
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
             
             <br>
             
@@ -1547,14 +1477,11 @@ $(function () {
     <!--腾讯兔小巢-->
     
     
-<<<<<<< HEAD
     <script type="text/javascript" color="0,0,255"
         pointColor="0,0,255" opacity='0.7'
         zIndex="-1" count="99"
         src="/libs/background/canvas-nest.js"></script>
     
-=======
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
     
 
@@ -1564,10 +1491,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<<<<<<< HEAD
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-=======
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
->>>>>>> a18bdb8a58b6e72eb58df4b3fb44dcae64391fdf
 
 </html>
