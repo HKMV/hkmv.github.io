@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="记一次服务器网络故障-安装v2ray控制管理面板v2-ui遇到的, 慕书">
+    <meta name="keywords" content="记一次服务器网络故障-安装 某某控制管理面板遇到的, 慕书">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>记一次服务器网络故障-安装v2ray控制管理面板v2-ui遇到的 | 慕书</title>
+    <title>记一次服务器网络故障-安装 某某控制管理面板遇到的 | 慕书</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -259,12 +259,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">记一次服务器网络故障-安装v2ray控制管理面板v2-ui遇到的</h1>
+                    <h1 class="description center-align post-title">记一次服务器网络故障-安装 某某控制管理面板遇到的</h1>
                 </div>
             </div>
         </div>
@@ -399,14 +399,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-21
+                    2021-10-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    256
+                    255
                 </div>
                 
 
@@ -436,15 +436,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在使用下面的一键安装命令，安装 v2-ui 时，回车后没任何输出，单执行“curl -Ls <a target="_blank" rel="noopener" href="https://blog.sprov.xyz/v2-ui.sh%E2%80%9D%E4%B9%9F%E6%98%AF%E6%B2%A1%E4%BB%BB%E4%BD%95%E8%BE%93%E5%87%BA%E5%92%8C%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA%E3%80%82%E7%84%B6%E5%90%8E%E4%BD%BF%E7%94%A8wget%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD%E4%B9%9F%E6%98%AF%E6%97%A0%E6%8F%90%E7%A4%BA%E3%80%82">https://blog.sprov.xyz/v2-ui.sh”也是没任何输出和错误提示。然后使用wget进行下载也是无提示。</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">curl</span> -Ls https://blog.sprov.xyz/v2-ui.sh<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <p>在使用下面的一键安装命令，安装 某某面板 时，回车后没任何输出，单执行“curl -Ls <a target="_blank" rel="noopener" href="https://blog.xxx.xyz/xxi.sh%E2%80%9D%E4%B9%9F%E6%98%AF%E6%B2%A1%E4%BB%BB%E4%BD%95%E8%BE%93%E5%87%BA%E5%92%8C%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA%E3%80%82%E7%84%B6%E5%90%8E%E4%BD%BF%E7%94%A8wget%E8%BF%9B%E8%A1%8C%E4%B8%8B%E8%BD%BD%E4%B9%9F%E6%98%AF%E6%97%A0%E6%8F%90%E7%A4%BA%E3%80%82">https://blog.xxx.xyz/xxi.sh”也是没任何输出和错误提示。然后使用wget进行下载也是无提示。</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">curl</span> -Ls https://blog.xxx.xyz/xxi.sh<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>刚开始我想着可能是由于 curl 和 wget 版本太低的问题，结果使用 apt 更新发现已是最新版本，使用“apt-get&nbsp;updata”命令提示一堆错误。我以为是更新源出问题了呢，各种替换更新源，依旧是报错。</p>
 <p>后来查询“wget: unable to resolve host address”相关的错误信息才知道是 Dns 导致的无法连接网络。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf <span class="token comment">#发现 nameserver 后面全是空白</span>
 <span class="token comment">#在后面添加上 8.8.8.8（google dns服务器）114.114.114.114（公共 dns服务器）并保存。</span>
 <span class="token comment">#再执行安装执行</span>
-<span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">curl</span> -Ls https://blog.sprov.xyz/v2-ui.sh<span class="token punctuation">)</span>  <span class="token comment">#出现了下载进度和安装过程提示，ok完美了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">bash</span> <span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token function">curl</span> -Ls https://blog.xxx.xyz/xxi.sh<span class="token punctuation">)</span>  <span class="token comment">#出现了下载进度和安装过程提示，ok完美了</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
